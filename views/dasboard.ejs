@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+        <%- include('layouts/navbar'); -%>
+        <!-- Page Header-->
+        <!-- <header class="masthead" style="background-color:rgb(58, 61, 61)">
+           
+        </header> -->
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header bg-success text-white text-center">
+                            <h2>Search for Flights</h2>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="departure" class="form-label">Departure City</label>
+                                    <input type="text" class="form-control" id="departure" placeholder="Enter departure city">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="destination" class="form-label">Destination City</label>
+                                    <input type="text" class="form-control" id="destination" placeholder="Enter destination city">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="departureDate" class="form-label">Departure Date</label>
+                                    <input type="date" class="form-control" id="departureDate">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="returnDate" class="form-label">Return Date</label>
+                                    <input type="date" class="form-control" id="returnDate">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="passengers" class="form-label">Number of Passengers</label>
+                                    <input type="number" class="form-control" id="passengers" min="1" max="10" value="1">
+                                </div>
+                                <button type="submit" class="btn btn-success w-100">Search Flights</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Footer-->
+       <!-- <%- include('layouts/footer'); -%> -->
+        <%- include('layouts/scripts'); -%>
+    </body>
+</html>
+
