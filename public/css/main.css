@@ -1,3 +1,25 @@
 article{
-    background-image: url('public/assets/img/BackgroundImage.jpg');
-}
+    background: url('/assets/img/BackgroundImage.jpg'); 
+    width: 100%;
+     /* 
+        reference: 
+        https://www.istockphoto.com/photo/passenger-airplane-flying-above-clouds-during-sunset-gm155439315-21435411 
+    
+     */
+  }
+ 
+  .btn .btn-success{
+    width:100%;
+    margin-bottom: 20px;
+  
+  }
+  input{
+    color: black;
+  }
+
+
+  /* 
+  .form-control{
+    
+
+  } */
