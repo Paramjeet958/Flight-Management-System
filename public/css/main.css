@@ -1,6 +1,11 @@
 article{
-    background: url('/assets/img/BackgroundImage.jpg'); 
+    background: url('/assets/img/flight.jpg'); 
+   
+    background-size: cover;
+    background-size: 100%;
     width: 100%;
+    height: 100%;
+    
      /* 
         reference: 
         https://www.istockphoto.com/photo/passenger-airplane-flying-above-clouds-during-sunset-gm155439315-21435411 
@@ -9,7 +14,7 @@ article{
   }
  
   .btn .btn-success{
-    width:100%;
+    width:20%;
     margin-bottom: 20px;
   
   }
@@ -17,9 +22,115 @@ article{
     color: black;
   }
 
+HEADER{
+  height:auto;
+  background-color: #FFA900;
+}
+img{
+  margin: 20PX;
+  height: 100PX;
+  width: 100PX;
+  position: relative;
+  border-radius: 50%;
+}
+naV{
+  color: black;
+  margin-top: 30px;
+}
+/* footer{
+  background-color: black;
+  color: #FFA900;
+  padding: 50px 0;
+}
 
+footer h4 {
+  color: #FFA900;
+  margin-bottom: 20px;
+  margin-left: 600px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a {
+  color:#FFA900;
+  text-decoration: none;
+}
+
+footer ul.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+footer ul.social-links li {
+  margin: 0 10px;
+}
+
+footer ul.payment-methods {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+footer p {
+  color: #FFA900;
+  margin-bottom: 0;
+}
+
+footer .text-center {
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  footer h4 {
+    font-size: 1.5rem;
+  }
+} */
   /* 
   .form-control{
     
 
   } */
+
+  footer {
+    background-color: #333;
+    color: #FFA900;
+    padding: 20px 0;
+    margin-top: 10px;
+  }
+  
+  footer h4 {
+    color: #FFA900;
+    margin-bottom: 20px;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  footer ul li a {
+    color: #FFA900;
+  }
+  footer img.payment-methods {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer ul.payment-methods li {
+    margin: 0 10px;
+  }
+  

@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
    <%- include('layouts/header'); -%>
-  <head><link href="/css/main.css" type="text/css" rel="stylesheet" /> </head>
+  <head><link href="/css/main.css" type="text/css" rel="stylesheet" /> 
+    <script>
+        function toggleReturnDate() {
+            const returnDateField = document.getElementById('returnDateField');
+            const oneWayRadio = document.querySelector('input[name="tripType"][value="oneway"]');
+            returnDateField.style.display = oneWayRadio.checked ? 'none' : 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleReturnDate(); 
+            document.querySelectorAll('input[name="tripType"]').forEach(radio => {
+                radio.addEventListener('change', toggleReturnDate);
+            });
+        });
+    </script>
+    </head>
     <body>
         <!-- Navigation-->
         <%- include('layouts/navbar'); -%>
@@ -13,68 +28,57 @@
          
         </label>
         <article>
-          
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header bg-success text-white text-center">
-                            <h2>Search for Flights</h2>
-                        </div>
-                        <div class="card-body">
-                            <div class="radio">
-                           <div class="row">
-                           <div class="col-md-12"> 
-                            <label><input type="radio"  name="fav_language" value="HTML">
-                              One- way</label>
-                              <label><input type="radio"  name="fav_language" value="CSS">
-                              Round Trip</label>
-                              </div>
-                                 </div>
-                            <form>
-                                <div class="mb-3">
-                                    <!-- <label for="departure" class="form-label">Departure City</label> -->
-                                    <input type="text" class="form-control" id="departure" placeholder="Departure">
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header bg-success text-white text-center">
+                                <h2>Search for Flights</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="radio">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label><input type="radio" name="tripType" value="oneway" checked> One-way</label>
+                                            <label><input type="radio" name="tripType" value="roundtrip"> Round Trip</label>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="mb-3">
-                                    <!-- <label for="destination" class="form-label">Destination City</label> -->
-                                    <input type="text" class="form-control" id="destination" placeholder=" Destination">
-                                </div>
-                            
-                                <div class="mb-3">
-                                    <!-- <label for="departureDate" class="form-label">Departure Date</label> -->
-                                    <input type="date" class="form-control" id="departureDate">
-                                </div>
-                                <div class="mb-3">
-                                    <!-- <label for="returnDate" class="form-label">Return Date</label> -->
-                                    <input type="date" class="form-control" id="returnDate">
-                                </div>
-                                <div class="mb-3">
-                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
-                                    <input type="number" class="form-control"  placeholder="passengers" min="1" max="10" value="1">
-                                </div>
-                                <div class="mb-3">
-                                   
-                                    
-                               <select name="class" id="cars" class="form-control">
-                                       <option value="Economy">Economy</option>
-                                        <option value="Primum">Primum</option>
-                                       <option value="Business">Business</option>
-                                       <option value="First">First</option>
-                               </select>
-                                   
-                                </div>
-                                <button type="submit" class="btn btn-success w-100">Search Flights</button>
-                            </form>
+                                <form>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="departure" placeholder="Departure">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" id="destination" placeholder="Destination">
+                                        
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="date" class="form-control" id="departureDate">
+                                    </div>
+                                    <div class="mb-3" id="returnDateField">
+                                        <input type="date" class="form-control" id="returnDate">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="number" class="form-control" placeholder="Passengers" min="1" max="10" value="1">
+                                    </div>
+                                    <div class="mb-3">
+                                        <select name="class" id="class" class="form-control">
+                                            <option value="Economy">Economy</option>
+                                            <option value="Premium">Premium</option>
+                                            <option value="Business">Business</option>
+                                            <option value="First">First</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Search Flights</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-    </article>
+        </article>
         <!-- Footer-->
-       <!-- <%- include('layouts/footer'); -%> -->
+       <%- include('layouts/footer'); -%> 
         <%- include('layouts/scripts'); -%>
     </body>
 </html>
