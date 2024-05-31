@@ -12,6 +12,91 @@ article{
     
      */
   }
+  /* css
+  body, html {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+  } */
+  
+  .card {
+    align-content: center;
+    margin-left: 200px;
+      width: 70%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .img-fluid {
+      width: 100%;
+      height: auto;
+  }
+  
+  .cardTitle {
+      position: relative;
+      padding: 20px;
+      margin-left: 100px;
+      background-color: rgb(244, 146, 146);
+      border-radius: 10px;
+      color: rgb(25, 23, 23);
+  }
+  
+  .card-title, .card-text, .text-muted {
+      position: absolute;
+      opacity: 0;
+      animation: fadeInOut 10s linear infinite;
+  }
+  
+  .card-title.text-1, .card-text.text-1, .text-muted.text-1 {
+      animation-delay: 0s;
+  }
+  
+  .card-title.text-2, .card-text.text-2, .text-muted.text-2 {
+      animation-delay: 3.33s;
+  }
+  
+  .card-title.text-3, .card-text.text-3, .text-muted.text-3 {
+      animation-delay: 6.66s;
+  }
+  
+  @keyframes fadeInOut {
+      0%, 20%, 100% { opacity: 0; }
+      10%, 90% { opacity: 1; }
+  }
+  
+  .animated-image {
+      animation: rotateImage 10s linear infinite;
+  }
+  
+  @keyframes rotateImage {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-360deg); }
+  }
+  .form-control-icon input,
+  .form-control-icon select {
+    padding-left: 30px; /* Adjust padding to make space for the icon */
+  }
+
+  
+  /* .form-control-icon {
+    position: relative;
+}
+.form-control-icon input {
+    padding-left: 30px;
+} */
+.form-control-icon .fa {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #aaa;}
+ 
  
   .btn .btn-success{
     width:20%;
@@ -26,7 +111,11 @@ HEADER{
   height:auto;
   background-color: #FFA900;
 }
-img{
+#carouselExampleSlidesOnly img{
+  height: 800px;
+  width: 800px;
+}
+Header img{
   margin: 20PX;
   height: 100PX;
   width: 100PX;
