@@ -19,6 +19,8 @@ app.set('view engine', 'ejs')
 const dashboardController = require('./controllers/dashboard')
 const addFlightController = require('./controllers/addFlight')
 const adminFlightsController = require('./controllers/adminFlights')
+const showFlights = require('./controllers/showFlights')
+const flightResult = require('./controllers/flightResult')
 global.loggedIn = null;
 app.listen(4000,(req,res)=>{
     console.log("App listening on port 4000")
@@ -27,3 +29,5 @@ app.listen(4000,(req,res)=>{
 app.get('/',dashboardController)
 app.get('/adminFlights',adminFlightsController)
 app.post('/addFlight', addFlightController)
+app.post('/showFlights', showFlights)
+app.get('/flightResult', flightResult)

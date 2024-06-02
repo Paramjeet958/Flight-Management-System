@@ -14,78 +14,129 @@
         </label>
         <article>
           
-        
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header bg-success text-white text-center">
+                            <h2>Add Flights</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="radio">
+                           <div class="row">
                            
-                               
-                                 <form action= "/addflight " id="addflights" method="POST" data-sb-form-api-token="API_TOKEN" style="width:70vw ;margin-left:auto; margin-right:auto;" >
-                                    <div class="form-floating">
-                                        <input class="form-control" id="flightNumber" name="flightNumber" type="text" placeholder="Flight Number" data-sb-validations="flightNumber:required"  />
-                                        <label for="Number">Flight Number</label>
-                                        <div class="invalid-feedback" data-sb-feedback="flightNumber:required">This field is required.</div>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input class="form-control" id="flightName" name="flightName" type="text" placeholder="Flight Name" data-sb-validations="flightName:required"  />
-                                        <label for="name">Flight Name</label>
-                                        <div class="invalid-feedback" data-sb-feedback="flightName:required">This field is required.</div>
-                                    </div>
+                                 </div>
+                                 <form action= "/addflight " id="addflights" method="POST" data-sb-form-api-token="API_TOKEN" style="width:80% ;margin-left:auto; margin-right:auto;" >
+                                
+                                <div class="mb-3">
+                                    <!-- <label for="destination" class="form-label">Destination City</label> -->
+                                    <input class="form-control" id="flightNumber" name="flightNumber" type="text" placeholder="Flight Number" data-sb-validations="flightNumber:required"  />
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <!-- <label for="departureDate" class="form-label">Departure Date</label> -->
+                                    <input class="form-control" id="flightName" name="flightName" type="text" placeholder="Flight Name" data-sb-validations="flightName:required"  />
+                                </div>
+                                <div class="mb-3">
+                                    <!-- <label for="returnDate" class="form-label">Return Date</label> -->
+                                    <input class="form-control" id="origin" name="origin" type="text" placeholder="origin" data-sb-validations="origin:required"  />
+                                </div>
+                                <div class="mb-3">
+                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
+                                    <input class="form-control" id="destination" name="destination" type="text" placeholder="destination" data-sb-validations="destination:required"  />
+                                </div>
+                                <div class="mb-3">
+                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
+                                    <input class="form-control" id="duration" name="duration" type="number" placeholder="duration" data-sb-validations="duration:required"  />
+                                </div>
+                                <div class="mb-3">
+                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
+                                    <input class="form-control" id="departureDate" name="departureDate" type="date" placeholder="departureDate" data-sb-validations="departureTime:required"  />
+                                </div>
+                                <div class="mb-3">
+                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
+                                    <input class="form-control" id="departureTime" name="departureTime" type="time" placeholder="departureTime" data-sb-validations="departureTime:required"  />
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
+                                    <input class="form-control" id="arrivalDate" name="arrivalDate" type="date" placeholder="arrivalDate" data-sb-validations="arrivalDate:required"  />
+                                </div>
+                                <div class="mb-3">
+                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
+                                    <input class="form-control" id="arrivalTime" name="arrivalTime" type="time" placeholder="arrivalTime" data-sb-validations="arrivalTime:required"  />
+                                </div>
+                                <div class="mb-3">
+                                   
                                     
-                                    <div class="form-floating">
-                                        <input class="form-control" id="depatureTime" name="depatureTime" type="text" placeholder="depatureTime" data-sb-validations="depatureTime:required"  />
-                                        <label for="Number">Departure Time</label>
-                                        <div class="invalid-feedback" data-sb-feedback="depatureTime:required">This field is required.</div>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input class="form-control" id="departureDate" name="departureDate" type="date" placeholder="departureDate" data-sb-validations="departureDate:required"  />
-                                        <label for="Number">Departure Date</label>
-                                        <div class="invalid-feedback" data-sb-feedback="departureDate:required">This field is required.</div>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input class="form-control" id="arrivalTime" name="arrivalTime" type="text" placeholder="arrivalTime" data-sb-validations="arrivalTime:required"  />
-                                        <label for="Number">Arrival Time</label>
-                                        <div class="invalid-feedback" data-sb-feedback="arrivalTime:required">This field is required.</div>
-                                    </div>
-                                    <div class="form-floating">
-                                        <input class="form-control" id="arrivalDate" name="departureDate" type="date" placeholder="arrivalDate" data-sb-validations="arrivalDate:required"  />
-                                        <label for="arrivalDate">Arrival Date</label>
-                                        <div class="invalid-feedback" data-sb-feedback="arrivalDate:required">This field is required.</div>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" name="stay" type="checkbox" value="true" id="stay">
-                                        <label class="form-check-label" for="stay">
-                                          Stay
-                                        </label>
-                                      </div>
-                                      <div class="form-floating">
-                                        <input class="form-control" id="stayTime" name="stayTime" type="text" placeholder="stayTime" data-sb-validations="stayTime:required"  />
-                                        <label for="stayTime">Stay Time</label>
+                                    <select name="status" id="status" class="form-control">
+                                            <option value="scheduled">scheduled</option>
+                                             <option value="delayed">delayed</option>
+                                            <option value="cancelled">cancelled</option>
+                                            <option value="completed">completed</option>
+                                    </select>
                                         
-                                    </div>
-                                    <div class="form-floating">
-                                        <input class="form-control" id="stayLocation" name="stayLocation" type="text" placeholder="stayLocation" data-sb-validations="stayLocation:required"  />
-                                        <label for="stayLocation">Stay Location</label>
-                                        
-                                    </div>
-                                    
-                                    <br />
-                                    
-                                    <div class="d-none" id="submitSuccessMessage">
-                                        <div class="text-center mb-3">
-                                            <div class="fw-bolder">Form submission successful!</div>
-                                            To activate this form, sign up at
-                                            <br />
-                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary"
-                                            id="sendMessageButton">Add Flight</button>
-                                            
-                                    </div>
-                                </form>
-
+                                     </div>
+                                <button type="submit" class="btn btn-success w-100">Add Flight</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </article>
         <!-- Footer-->
        <!-- <%- include('layouts/footer'); -%> -->
         <%- include('layouts/scripts'); -%>
     </body>
 </html>
+
+
+
+
+// -----------------------------------------
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action= "/addflight " id="addflights" method="POST" data-sb-form-api-token="API_TOKEN" style="width:70vw ;margin-left:auto; margin-right:auto;" >
+        <div class="form-floating">
+            <input class="form-control" id="flightNumber" name="flightNumber" type="text" placeholder="Flight Number" data-sb-validations="flightNumber:required"  />
+            <label for="Number">Flight Number</label>
+            <div class="invalid-feedback" data-sb-feedback="flightNumber:required">This field is required.</div>
+        </div>
+        <div class="form-floating">
+            <input class="form-control" id="flightName" name="flightName" type="text" placeholder="Flight Name" data-sb-validations="flightName:required"  />
+            <label for="name">Flight Name</label>
+            <div class="invalid-feedback" data-sb-feedback="flightName:required">This field is required.</div>
+        </div>
+        
+        <div class="form-floating">
+            <input class="form-control" id="origin" name="origin" type="text" placeholder="origin" data-sb-validations="origin:required"  />
+            <label for="Number">origin</label>
+            <div class="invalid-feedback" data-sb-feedback="origin:required">This field is required.</div>
+        </div>
+        <div class="form-floating">
+            <input class="form-control" id="destination" name="destination" type="text" placeholder="destination" data-sb-validations="destination:required"  />
+            <label for="Number">Destination</label>
+            <div class="invalid-feedback" data-sb-feedback="destination:required">This field is required.</div>
+        </div>
+        <div class="form-floating">
+            <input class="form-control" id="duration" name="duration" type="number" placeholder="duration" data-sb-validations="duration:required"  />
+            <label for="Number">Duration of Flight</label>
+            <div class="invalid-feedback" data-sb-feedback="duration:required">This field is required.</div>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"
+                id="sendMessageButton">Add Flight</button>
+                
+        </div>
+    </form>
+</body>
+</html> -->

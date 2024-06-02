@@ -7,24 +7,20 @@ const FlightSchema = new Schema({
         type: String,
         required:[true,'Please Enter Flight Number']
     },
-    flightName: String,
-    departureTime: String,
-    depatureDate: Date,
-    arrivalTime: String,
-    arrivalDate:Date,
-    stay:{
-        type:Boolean,
-        default:false
-    },
-    stayTime:{
-        type:String,
-        default:'No'
-    },
-    stayLocation:{
-        type:String,
-        default:'No'
-    }
+    flightName: {type: String, required:true},
+    origin:{type: String, required:true},
+    destination: {type: String, required:true},
+    duration: {type: Number, required:true},
+    departureDate: { type: Date, required: true },
+    departureTime: { type: String, required: true },
+    arrivalDate: { type: Date, required: true },
+    arrivalTime: { type: String, required: true },
+    status: { type: String, enum: ['scheduled', 'delayed', 'cancelled', 'completed'], default: 'scheduled' },
+}, {
+    timestamps: true
+}
+   
 
-});
+);
 const Flights= mongoose.model('Flights',FlightSchema);
 module.exports=Flights
