@@ -1,0 +1,638 @@
+@media (min-width:0px) and (max-width: 600px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .brekfast,.lunch,.dinner{
+        padding: 12px;
+    }
+    h2{
+        font-size: 25px;
+        text-align: center;
+        padding-bottom: 12px;
+        
+    }
+    .d_flex{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 17px;
+    }
+    .w_25{
+        width: 100%;
+        padding: 12px;
+        transition: all 0.5s;
+        transform: scale(0.95);
+    
+    }
+    .w_25:hover{
+        transform: scale(1);
+        
+    }
+    .box
+    {
+        width: max-content;
+    }
+    h3{
+        font-size: 22px;
+        text-align: center;
+        padding: 7px;
+        text-transform: capitalize;
+    }
+    h5{
+        font-size: 15px;
+        text-align: center;
+    }
+    h6{
+        font-size: 15px;
+        text-align: center;
+        padding: 6px;
+    }
+    .box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8,.box9,.box10,.box11,.box12{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 230px;
+        border-radius: 15px;
+        transition: all 0.5s;
+    }
+    .box1:hover,.box2:hover,.box3:hover,.box4:hover,.box5:hover,.box6:hover,.box7:hover,.box8:hover,.box9:hover,.box10:hover,.box11:hover,.box12:hover{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 230px;
+        border-radius: 15px;
+    }
+    .box1{
+        background-image: url("img/b1.jpg");
+    }
+    .box1:hover{
+        background-image: url("img/2.jpg");
+    }
+    .box2{
+        background-image: url("img/b3.jpg");
+    }
+    .box2:hover{
+        background-image: url("img/4.jpg");
+    }
+    .box3{
+        background-image: url("img/b5.jpg");
+    }
+    .box3:hover{
+        background-image: url("img/6.jpg");
+    }
+    .box4{
+        background-image: url("img/b7.jpg");
+    }
+    .box4:hover{
+        background-image: url("img/8.jpg");
+    }
+    .box5{
+        background-image: url("img/l1.jpg");
+    }
+    .box5:hover{
+        background-image: url("img/l2.jpg");
+    }
+    .box6{
+        background-image: url("img/l3.jpg");
+    }
+    .box6:hover{
+        background-image: url("img/l4.jpg");
+    }
+    .box7{
+        background-image: url("img/l5.jpg");
+    }
+    .box7:hover{
+        background-image: url("img/l6.jpg");
+    }
+    .box8{
+        background-image: url("img/l7.jpg");
+    }
+    .box8:hover{
+        background-image: url("img/l8.jpg");
+    }
+    .box9{
+        background-image: url("img/d1.jpg");
+    }
+    .box9:hover{
+        background-image: url("img/d2.jpg");
+    }
+    .box10{
+        background-image: url("img/d3.jpg");
+    }
+    .box10:hover{
+        background-image: url("img/d4.jpg");
+    }
+    .box11{
+        background-image: url("img/d5.jpg");
+    }
+    .box11:hover{
+        background-image: url("img/d6.jpg");
+    }
+    .box12{
+        background-image: url("img/d7.jpg");
+    }
+    .box12:hover{
+        background-image: url("img/d8.jpg");
+    }
+    a{
+        text-align: center;
+        display: block;
+    }
+    button{
+        padding: 8px 10px;
+        border: 1px solid black;
+        border-radius: 15px;
+        transform: scale(0.9);
+        transition: all 0.5s;
+    }
+    button:hover{
+        transform: scale(1);
+    
+    }
+}
+@media (min-width:601px) and (max-width: 900px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        max-width: 650px;
+        margin: 0 auto;
+    }
+    .brekfast,.lunch,.dinner{
+        padding: 13px;
+    }
+    h2{
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 13px;
+        
+    }
+    .d_flex{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 18px;
+    }
+    .w_25{
+        width: 100%;
+        padding: 14px;
+        transition: all 0.5s;
+        transform: scale(0.95);
+    
+    }
+    .w_25:hover{
+        transform: scale(1);
+        
+    }
+    .box
+    {
+        width: max-content;
+    }
+    h3{
+        font-size: 25px;
+        text-align: center;
+        padding: 8px;
+        text-transform: capitalize;
+    }
+    h5{
+        font-size: 17px;
+        text-align: center;
+    }
+    h6{
+        font-size: 17px;
+        text-align: center;
+        padding: 7px;
+    }
+    .box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8,.box9,.box10,.box11,.box12{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 250px;
+        border-radius: 17px;
+        transition: all 0.5s;
+    }
+    .box1:hover,.box2:hover,.box3:hover,.box4:hover,.box5:hover,.box6:hover,.box7:hover,.box8:hover,.box9:hover,.box10:hover,.box11:hover,.box12:hover{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 250px;
+        border-radius: 17px;
+    }
+    .box1{
+        background-image: url("img/b1.jpg");
+    }
+    .box1:hover{
+        background-image: url("img/2.jpg");
+    }
+    .box2{
+        background-image: url("img/b3.jpg");
+    }
+    .box2:hover{
+        background-image: url("img/4.jpg");
+    }
+    .box3{
+        background-image: url("img/b5.jpg");
+    }
+    .box3:hover{
+        background-image: url("img/6.jpg");
+    }
+    .box4{
+        background-image: url("img/b7.jpg");
+    }
+    .box4:hover{
+        background-image: url("img/8.jpg");
+    }
+    .box5{
+        background-image: url("img/l1.jpg");
+    }
+    .box5:hover{
+        background-image: url("img/l2.jpg");
+    }
+    .box6{
+        background-image: url("img/l3.jpg");
+    }
+    .box6:hover{
+        background-image: url("img/l4.jpg");
+    }
+    .box7{
+        background-image: url("img/l5.jpg");
+    }
+    .box7:hover{
+        background-image: url("img/l6.jpg");
+    }
+    .box8{
+        background-image: url("img/l7.jpg");
+    }
+    .box8:hover{
+        background-image: url("img/l8.jpg");
+    }
+    .box9{
+        background-image: url("img/d1.jpg");
+    }
+    .box9:hover{
+        background-image: url("img/d2.jpg");
+    }
+    .box10{
+        background-image: url("img/d3.jpg");
+    }
+    .box10:hover{
+        background-image: url("img/d4.jpg");
+    }
+    .box11{
+        background-image: url("img/d5.jpg");
+    }
+    .box11:hover{
+        background-image: url("img/d6.jpg");
+    }
+    .box12{
+        background-image: url("img/d7.jpg");
+    }
+    .box12:hover{
+        background-image: url("img/d8.jpg");
+    }
+    a{
+        text-align: center;
+        display: block;
+    }
+    button{
+        padding: 10px 12px;
+        border: 1px solid black;
+        border-radius: 16px;
+        transform: scale(0.9);
+        transition: all 0.5s;
+    }
+    button:hover{
+        transform: scale(1);
+    
+    }
+}
+@media (min-width:901px) and (max-width:1200px) {
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        max-width: 870px;
+        margin: 0 auto;
+    }
+    .brekfast,.lunch,.dinner{
+        padding: 15px;
+    }
+    h2{
+        font-size: 35px;
+        text-align: center;
+        padding-bottom: 15px;
+        
+    }
+    .d_flex{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+    .w_25{
+        width: 25%;
+        padding: 15px;
+        transition: all 0.5s;
+        transform: scale(0.95);
+    
+    }
+    .w_25:hover{
+        transform: scale(1);
+        
+    }
+    .box
+    {
+        width: max-content;
+    }
+    h3{
+        font-size: 27px;
+        text-align: center;
+        padding: 8px;
+        text-transform: capitalize;
+    }
+    h5{
+        font-size: 18px;
+        text-align: center;
+    }
+    h6{
+        font-size: 18px;
+        text-align: center;
+        padding: 8px;
+    }
+    .box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8,.box9,.box10,.box11,.box12{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 280px;
+        border-radius: 18px;
+        transition: all 0.5s;
+    }
+    .box1:hover,.box2:hover,.box3:hover,.box4:hover,.box5:hover,.box6:hover,.box7:hover,.box8:hover,.box9:hover,.box10:hover,.box11:hover,.box12:hover{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 280px;
+        border-radius: 18px;
+    }
+    .box1{
+        background-image: url("img/b1.jpg");
+    }
+    .box1:hover{
+        background-image: url("img/2.jpg");
+    }
+    .box2{
+        background-image: url("img/b3.jpg");
+    }
+    .box2:hover{
+        background-image: url("img/4.jpg");
+    }
+    .box3{
+        background-image: url("img/b5.jpg");
+    }
+    .box3:hover{
+        background-image: url("img/6.jpg");
+    }
+    .box4{
+        background-image: url("img/b7.jpg");
+    }
+    .box4:hover{
+        background-image: url("img/8.jpg");
+    }
+    .box5{
+        background-image: url("img/l1.jpg");
+    }
+    .box5:hover{
+        background-image: url("img/l2.jpg");
+    }
+    .box6{
+        background-image: url("img/l3.jpg");
+    }
+    .box6:hover{
+        background-image: url("img/l4.jpg");
+    }
+    .box7{
+        background-image: url("img/l5.jpg");
+    }
+    .box7:hover{
+        background-image: url("img/l6.jpg");
+    }
+    .box8{
+        background-image: url("img/l7.jpg");
+    }
+    .box8:hover{
+        background-image: url("img/l8.jpg");
+    }
+    .box9{
+        background-image: url("img/d1.jpg");
+    }
+    .box9:hover{
+        background-image: url("img/d2.jpg");
+    }
+    .box10{
+        background-image: url("img/d3.jpg");
+    }
+    .box10:hover{
+        background-image: url("img/d4.jpg");
+    }
+    .box11{
+        background-image: url("img/d5.jpg");
+    }
+    .box11:hover{
+        background-image: url("img/d6.jpg");
+    }
+    .box12{
+        background-image: url("img/d7.jpg");
+    }
+    .box12:hover{
+        background-image: url("img/d8.jpg");
+    }
+    a{
+        text-align: center;
+        display: block;
+    }
+    button{
+        padding: 11px 13px;
+        border: 2px solid black;
+        border-radius: 18px;
+        transform: scale(0.9);
+        transition: all 0.5s;
+    }
+    button:hover{
+        transform: scale(1);
+    
+    }
+}
+@media (min-width:1201px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+    .brekfast,.lunch,.dinner{
+        padding: 20px;
+    }
+    h2{
+        font-size: 40px;
+        text-align: center;
+        padding-bottom: 20px;
+        
+    }
+    .d_flex{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        border: 2px solid black;
+        border-radius: 25px;
+    }
+    .w_25{
+        width: 25%;
+        padding: 20px;
+        transition: all 0.5s;
+        transform: scale(0.95);
+    
+    }
+    .w_25:hover{
+        transform: scale(1);
+        
+    }
+    .box
+    {
+        width: max-content;
+    }
+    h3{
+        font-size: 30px;
+        text-align: center;
+        padding: 10px;
+        text-transform: capitalize;
+    }
+    h5{
+        font-size: 20px;
+        text-align: center;
+    }
+    h6{
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+    .box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8,.box9,.box10,.box11,.box12{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 300px;
+        border-radius: 20px;
+        transition: all 0.5s;
+    }
+    .box1:hover,.box2:hover,.box3:hover,.box4:hover,.box5:hover,.box6:hover,.box7:hover,.box8:hover,.box9:hover,.box10:hover,.box11:hover,.box12:hover{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 300px;
+        border-radius: 20px;
+    }
+    .box1{
+        background-image: url("img/b1.jpg");
+    }
+    .box1:hover{
+        background-image: url("img/2.jpg");
+    }
+    .box2{
+        background-image: url("img/b3.jpg");
+    }
+    .box2:hover{
+        background-image: url("img/4.jpg");
+    }
+    .box3{
+        background-image: url("img/b5.jpg");
+    }
+    .box3:hover{
+        background-image: url("img/6.jpg");
+    }
+    .box4{
+        background-image: url("img/b7.jpg");
+    }
+    .box4:hover{
+        background-image: url("img/8.jpg");
+    }
+    .box5{
+        background-image: url("img/l1.jpg");
+    }
+    .box5:hover{
+        background-image: url("img/l2.jpg");
+    }
+    .box6{
+        background-image: url("img/l3.jpg");
+    }
+    .box6:hover{
+        background-image: url("img/l4.jpg");
+    }
+    .box7{
+        background-image: url("img/l5.jpg");
+    }
+    .box7:hover{
+        background-image: url("img/l6.jpg");
+    }
+    .box8{
+        background-image: url("img/l7.jpg");
+    }
+    .box8:hover{
+        background-image: url("img/l8.jpg");
+    }
+    .box9{
+        background-image: url("img/d1.jpg");
+    }
+    .box9:hover{
+        background-image: url("img/d2.jpg");
+    }
+    .box10{
+        background-image: url("img/d3.jpg");
+    }
+    .box10:hover{
+        background-image: url("img/d4.jpg");
+    }
+    .box11{
+        background-image: url("img/d5.jpg");
+    }
+    .box11:hover{
+        background-image: url("img/d6.jpg");
+    }
+    .box12{
+        background-image: url("img/d7.jpg");
+    }
+    .box12:hover{
+        background-image: url("img/d8.jpg");
+    }
+    a{
+        text-align: center;
+        display: block;
+    }
+    button{
+        padding: 12px 15px;
+        border: 2px solid black;
+        border-radius: 20px;
+        transform: scale(0.9);
+        transition: all 0.5s;
+    }
+    button:hover{
+        transform: scale(1);
+    
+    }
+}
+    
