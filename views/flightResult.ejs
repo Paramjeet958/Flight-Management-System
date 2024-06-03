@@ -1,46 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-   <%- include('layouts/header'); -%>
-  <head><link href="/css/main.css" type="text/css" rel="stylesheet" /> </head>
-    <body>
-        <!-- Navigation-->
-        <%- include('layouts/navbar'); -%>
-        <!-- Page Header-->
-        <!-- <header class="masthead" style="background-color:rgb(58, 61, 61)">
-           
-        </header> -->
-       
-         
-        </label>
-        <article>
-          
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header bg-success text-white text-center">
-                            <h2>Add Flights</h2>
-                        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Flights</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('layouts/navbar'); -%>
+    <div class="container mt-5">
+        <h1 class="mb-4">Available Flights</h1>
+        <div class="row">
+            <% flights.forEach(flight => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="height: max-content;">
                         <div class="card-body">
-                            <div class="radio">
-                           <div class="row">
-                            <h1>Available Flights</h1>
-    <ul>
-        <% flights.forEach(flight => { %>
-            <li><%= flight.flightName %> - <%= flight.flightNumber %> from <%= flight.origin %> to <%= flight.destination %> on <%= flight.departureDate.toDateString() %></li>
-        <% }) %>
-    </ul>
-                                 </div>
-                             
+                            <h5 class="card-title"><%= flight.flightName %></h5>
+                            <h6 class="card-subtitle mb-2 text-muted"><%= flight.flightNumber %></h6>
+                            <p class="card-text">
+                                <strong>From:</strong> <%= flight.origin %> <br>
+                                <strong>To:</strong> <%= flight.destination %> <br>
+                                <strong>Departure Date:</strong> <%= new Date(flight.departureDate).toDateString() %> <br>
+                                <strong>Arrival Date:</strong> <%= new Date(flight.arrivalDate).toDateString() %> <br>
+                                <strong>Duration:</strong> <%= flight.duration %> minutes
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
+            <% }) %>
         </div>
-        
-    </article>
-        <!-- Footer-->
-       <!-- <%- include('layouts/footer'); -%> -->
-        <%- include('layouts/scripts'); -%>
-    </body>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

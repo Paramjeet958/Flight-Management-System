@@ -7,14 +7,14 @@ const FlightSchema = new Schema({
         type: String,
         required:[true,'Please Enter Flight Number']
     },
-    flightName: {type: String, required:true},
-    origin:{type: String, required:true},
-    destination: {type: String, required:true},
-    duration: {type: Number, required:true},
-    departureDate: { type: Date, required: true },
-    departureTime: { type: String, required: true },
-    arrivalDate: { type: Date, required: true },
-    arrivalTime: { type: String, required: true },
+    flightName: {type: String, required:[true,'Please provide Flight Name']},
+    origin:{type: String, required:[true,'Please provide Departure']},
+    destination: {type: String, required:[true,'Please provide Destination']},
+    duration: {type: Number, required:[true,'Please provide Duration in Minutes']},
+    departureDate: { type: Date, required: [true,'Please provide Departure Date'] },
+    departureTime: { type: String, required: [true,'Please provide Departure Time'] },
+    arrivalDate: { type: Date, required: [true,'Please provide Arrival Date'] },
+    arrivalTime: { type: String, required: [true,'Please provide Arrival Time'] },
     status: { type: String, enum: ['scheduled', 'delayed', 'cancelled', 'completed'], default: 'scheduled' },
 }, {
     timestamps: true

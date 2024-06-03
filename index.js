@@ -20,8 +20,17 @@ const dashboardController = require('./controllers/dashboard')
 const addFlightController = require('./controllers/addFlight')
 const adminFlightsController = require('./controllers/adminFlights')
 const showFlights = require('./controllers/showFlights')
-const flightResult = require('./controllers/flightResult')
 global.loggedIn = null;
+app.use(flash());
+app.use(expressSession({
+    secret: 'Flight_management'
+    }))
+    app.use("*", (req, res, next) => {
+        // loggedIn = req.session.userId;
+       
+      
+        next()
+    });
 app.listen(4000,(req,res)=>{
     console.log("App listening on port 4000")
 })
@@ -30,4 +39,3 @@ app.get('/',dashboardController)
 app.get('/adminFlights',adminFlightsController)
 app.post('/addFlight', addFlightController)
 app.post('/showFlights', showFlights)
-app.get('/flightResult', flightResult)
