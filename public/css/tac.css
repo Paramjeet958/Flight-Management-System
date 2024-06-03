@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+.box{
+    padding: 10px 5px;
+    background-color: rgb(116, 116, 116);
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+.q1,.q2,.q3,.q4,.q5,.q6{
+    padding: 10px;
+    font-size: 30px;
+    transition: all 0.3s;
+}
+.a1,.a2,.a3,.a4,.a5,.a6{
+    padding: 10px;
+    font-size: 20px;
+    transition: all 0.3s;
+    display: none;
+    visibility: hidden;
+}
+.box:hover .a1,.box:hover .a2,.box:hover .a3,.box:hover .a4,.box:hover .a5,.box:hover .a6{
+    visibility: visible;
+    display: block ;
+}
