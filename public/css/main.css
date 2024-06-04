@@ -17,30 +17,29 @@
   margin: 0 10px;
   text-align: center;
 }
-.card-title{
-  margin-bottom: 20px;
-}
+
 .card2 h2 {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .card2 img {
   width: 50px;
-  height: 50px;
+  height: 40px;
   margin-bottom: 10px;
 }
-
+.card-footer{
+  margin-top: 0;
+}
 .counter {
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 5px;
 }
 article{
-    background: url('/assets/img/flight.jpg'); 
-   
+    background: url('/assets/img/view3.jpg'); 
     background-size: cover;
-    background-size: 100%;
+    overflow: hidden;
     
      /* 
         reference: 
@@ -63,6 +62,18 @@ article{
     width: 50%;
     margin: 20px auto;
   }
+  .d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
   body, html {
       margin: 0;
       padding: 0;
@@ -71,17 +82,20 @@ article{
       font-family: Arial, sans-serif;
       background-color: #f8f9fa;
   } 
-  
+
   .card {
+    
+  
+
     align-content: center;
-    margin-left: 200px;
+   
       width: 70%;
       border: 1px solid #ddd;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
+
   .img-fluid {
       width: 100%;
       height: auto;
@@ -96,23 +110,6 @@ article{
     color: rgb(25, 23, 23);
 }
 
-.card-title, .card-text, .text-muted {
-    position: absolute;
-    opacity: 0;
-    animation: fadeInOut 10s linear infinite;
-}
-
-.card-title.text-1, .card-text.text-1, .text-muted.text-1 {
-    animation-delay: 0s;
-}
-
-.card-title.text-2, .card-text.text-2, .text-muted.text-2 {
-    animation-delay: 3.33s;
-}
-
-.card-title.text-3, .card-text.text-3, .text-muted.text-3 {
-    animation-delay: 6.66s;
-}
 .subheading h2{
   text-align: center;
   animation: letterAnimation 2s ease-in;
@@ -125,7 +122,7 @@ article{
 }
 
 .carousel-item img {
-  max-height: 400px; /* Adjust this value as needed */
+  max-height: 400px; 
   object-fit: cover;
   width: 100%;
 }

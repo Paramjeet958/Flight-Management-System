@@ -94,46 +94,47 @@
         <hr>
     </div>
 
-    <!-- Card for the images -->
+    <!-- Card for the images of different cities -->
     <div class="card-group">
-      
-        <div class="card">
-            <img src="/assets/img/pexels-137666-747079.jpg" class="card-img-top" alt="...">
+        <div class="card" data-aos="fade-down">
+            <img src="/assets/img/italy (1).jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5><br/>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title">Italy</h5>
+                    <p class="card-text">$1000</p>
+                </div>
             </div>
-            
-            <!-- <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div> -->
+            <div class="card-footer">
+                <small class="text-muted">Istanbul, Antalya, Ephesus</small>
+            </div>
         </div>
-       
-        <div class="card">
-            <img src="/assets/img/pexels-ashutoshsonwani-1720957.jpg" class="card-img-top" alt="...">
+        <div class="card" data-aos="fade-down" data-aos-delay="200">
+            <img src="/assets/img/Australia.jpg" class="card-img-top" alt="Australia image">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5><br/>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title">Australia</h5>
+                    <p class="card-text">$1600</p>
+                </div>
             </div>
-            <!-- <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div> -->
+            <div class="card-footer">
+                <small class="text-muted">Sydney, Melbourne, Canberra</small>
+            </div>
         </div>
-       
-        <div class="card">
-            <img src="/assets/img/pexels-gabby-k-7411985.jpg" class="card-img-top" alt="...">
+        <div class="card" data-aos="fade-down" data-aos-delay="400">
+            <img src="/assets/img/Dubai.jpg" class="card-img-top" alt="Dubai Image">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5><br/>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="card-title">Dubai</h5>
+                    <p class="card-text">$345</p>
+                </div>
             </div>
-            
-            <!-- <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div> -->
+            <div class="card-footer">
+                <small class="text-muted">Abu Dhabi</small>
+            </div>
         </div>
     </div>
-
+   
+<!-- journey of experience -->
     <div class="container1">
      
         <div class="card2">
@@ -166,7 +167,9 @@
     <!-- Footer-->
     <%- include('layouts/footer'); -%>
 
-    <script>
+    
+           <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+           <script>
         function toggleReturnDate() {
             const returnDateField = document.getElementById('returnDateField');
             const oneWayRadio = document.querySelector('input[name="tripType"][value="oneway"]');
@@ -177,6 +180,10 @@
             toggleReturnDate();
             document.querySelectorAll('input[name="tripType"]').forEach(radio => {
                 radio.addEventListener('change', toggleReturnDate);
+            });
+            AOS.init({
+                duration: 1000, // duration of the animation in milliseconds
+                once: true // whether animation should happen only once - while scrolling down
             });
         });
 
@@ -198,6 +205,7 @@
         }
 
         setInterval(updateCounters, 10); // Update counters every second
+
     </script>
 </body>
 </html>
