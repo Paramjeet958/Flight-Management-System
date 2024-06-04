@@ -20,6 +20,7 @@ const dashboardController = require('./controllers/dashboard')
 const addFlightController = require('./controllers/addFlight')
 const adminFlightsController = require('./controllers/adminFlights')
 const showFlights = require('./controllers/showFlights')
+const serviceController = require('./controllers/service')
 global.loggedIn = null;
 app.use(flash());
 app.use(expressSession({
@@ -39,3 +40,4 @@ app.get('/',dashboardController)
 app.get('/adminFlights',adminFlightsController)
 app.post('/addFlight', addFlightController)
 app.post('/showFlights', showFlights)
+app.get('/', serviceController)
