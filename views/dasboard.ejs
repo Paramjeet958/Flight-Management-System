@@ -28,10 +28,24 @@
                                 </div>
                                 <form action="/showFlights" method="POST" data-sb-form-api-token="API_TOKEN">
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" id="departure" name="origin" placeholder="Departure" data-sb-validations="origin:required">
+                                        <select class="form-control" id="departure" name="origin" data-sb-validations="origin:required">
+                                            <option value="" disabled selected>Departure</option>
+                                            <option value="JFK">John F. Kennedy International Airport (USA)</option>
+                                            <option value="LHR">London Heathrow Airport (UK)</option>
+                                            <option value="CDG">Charles de Gaulle Airport (France)</option>
+                                            <option value="HND">Tokyo Haneda Airport (Japan)</option>
+                                            <option value="SYD">Sydney Kingsford Smith Airport (Australia)</option>
+                                        </select>
                                     </div>
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" id="destination" name="destination" placeholder=" Destination" data-sb-validations="destination:required">
+                                        <select class="form-control" id="destination" name="destination" data-sb-validations="destination:required">
+                                            <option value="" disabled selected>Destination</option>
+                                            <option value="JFK">John F. Kennedy International Airport (USA)</option>
+                                            <option value="LHR">London Heathrow Airport (UK)</option>
+                                            <option value="CDG">Charles de Gaulle Airport (France)</option>
+                                            <option value="HND">Tokyo Haneda Airport (Japan)</option>
+                                            <option value="SYD">Sydney Kingsford Smith Airport (Australia)</option>
+                                        </select>
                                     </div>
                                     <div class="mb-3">
                                         <input type="date" class="form-control" id="departureDate" name="departureDate" data-sb-validations="departureDate:required">
@@ -60,6 +74,10 @@
         </div>
     </article>
 
+    <div class="centered-header">
+        <h2>Your Trust Our Responsibility</h2>
+        <hr>
+    </div>
     <!-- IMAGE CAROUSEL -->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -94,70 +112,126 @@
         <hr>
     </div>
 
-    <!-- Card for the images of different cities -->
-    <div class="card-group">
-        <div class="card" data-aos="fade-down">
-            <img src="/assets/img/italy (1).jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="card-title">Italy</h5>
-                    <p class="card-text">$1000</p>
+ <!-- Card for the images of different cities -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/assets/img/italy (1).jpg" class="card-img-top" alt="Italy">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">Italy</h5>
+                            <p class="card-text">$1000</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Istanbul, Antalya, Ephesus</small>
+                    </div>
                 </div>
             </div>
-            <div class="card-footer">
-                <small class="text-muted">Istanbul, Antalya, Ephesus</small>
-            </div>
-        </div>
-        <div class="card" data-aos="fade-down" data-aos-delay="200">
-            <img src="/assets/img/Australia.jpg" class="card-img-top" alt="Australia image">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="card-title">Australia</h5>
-                    <p class="card-text">$1600</p>
+            <div class="col-md-4 mb-4">
+                <div class="card" >
+                    <img src="/assets/img/Australia.jpg" class="card-img-top" alt="Australia">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">Australia</h5>
+                            <p class="card-text">$1600</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Sydney, Melbourne, Canberra</small>
+                    </div>
                 </div>
             </div>
-            <div class="card-footer">
-                <small class="text-muted">Sydney, Melbourne, Canberra</small>
-            </div>
-        </div>
-        <div class="card" data-aos="fade-down" data-aos-delay="400">
-            <img src="/assets/img/Dubai.jpg" class="card-img-top" alt="Dubai Image">
-            <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                    <h5 class="card-title">Dubai</h5>
-                    <p class="card-text">$345</p>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/assets/img/Dubai.jpg" class="card-img-top" alt="Dubai">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">Dubai</h5>
+                            <p class="card-text">$345</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Abu Dhabi</small>
+                    </div>
                 </div>
             </div>
-            <div class="card-footer">
-                <small class="text-muted">Abu Dhabi</small>
+        
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/assets/img/UK.jpg" class="card-img-top" alt="United Kingdom">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">United Kingdom</h5>
+                            <p class="card-text">$1365</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">London, Birmingham, Ruse</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/assets/img/japan.jpg" class="card-img-top" alt="Japan">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">Japan</h5>
+                            <p class="card-text">$1875</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Tokyo, Sapporo, Kyoto</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="/assets/img/france.jpg" class="card-img-top" alt="France">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">France</h5>
+                            <p class="card-text">$634</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Paris, Marseille, Lyon</small>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-   
+
+    <div class="centered-header">
+        <h2>Our records</h2>
+        <hr>
+    </div>
 <!-- journey of experience -->
     <div class="container1">
      
         <div class="card2">
-            <!-- <img src="/public/assets/img/visa.jpeg" alt="Years of Experience"> -->
+         
             <h2>Years of Experience</h2>
             <span class="counter" id="experienceCounter">28+</span>
         </div>
        
          <div class="card2">
-           <!-- <img src="https://www.iconfinder.com/icons/3968551/group_team_users_people_icon" alt="Team Members"> -->
+        
             <h2>Team Members</h2>
             <span class="counter" id="teamMembersCounter">600+</span>
         </div>
              
       
         <div class="card2">
-            <!-- <img src="https://www.iconfinder.com/icons/1442859/user_client_person_icon" alt="Satisfied Clients"> -->
+          
             <h2>Satisfied Clients</h2>
             <span class="counter" id="clientsCounter">800+</span>
         </div>
        
         <div class="card2">
-            <!-- <img src="https://www.iconfinder.com/icons/1846860/delivery_shipping_delivery_truck_icon" alt="Delivered Packages"> -->
+      
             <h2>Delivered Packages</h2>
             <span class="counter" id="packagesCounter">999+</span>
         </div>
@@ -166,46 +240,10 @@
 
     <!-- Footer-->
     <%- include('layouts/footer'); -%>
+<%- include('layouts/scripts'); -%>
+    
+          
 
     
-           <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-           <script>
-        function toggleReturnDate() {
-            const returnDateField = document.getElementById('returnDateField');
-            const oneWayRadio = document.querySelector('input[name="tripType"][value="oneway"]');
-            returnDateField.style.display = oneWayRadio.checked ? 'none' : 'block';
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            toggleReturnDate();
-            document.querySelectorAll('input[name="tripType"]').forEach(radio => {
-                radio.addEventListener('change', toggleReturnDate);
-            });
-            AOS.init({
-                duration: 1000, // duration of the animation in milliseconds
-                once: true // whether animation should happen only once - while scrolling down
-            });
-        });
-
-        let experienceCounter = document.getElementById("experienceCounter");
-        let teamMembersCounter = document.getElementById("teamMembersCounter");
-        let clientsCounter = document.getElementById("clientsCounter");
-        let packagesCounter = document.getElementById("packagesCounter");
-
-        let experienceCount = 28;
-        let teamMembersCount = 600;
-        let clientsCount = 800;
-        let packagesCount = 999;
-
-        function updateCounters() {
-            experienceCounter.textContent = experienceCount++ + "+";
-            teamMembersCounter.textContent = teamMembersCount++ + "+";
-            clientsCounter.textContent = clientsCount++ + "+";
-            packagesCounter.textContent = packagesCount++ + "+";
-        }
-
-        setInterval(updateCounters, 10); // Update counters every second
-
-    </script>
 </body>
 </html>

@@ -8,32 +8,32 @@
  <script src="js/scripts.js">
 
 
-function toggleReturnDate() {
-        const returnDateField = document.getElementById('returnDateField');
-        const oneWayRadio = document.querySelector('input[name="tripType"][value="oneway"]');
-        returnDateField.style.display = oneWayRadio.checked ? 'none' : 'block';
-    }
+// function toggleReturnDate() {
+//         const returnDateField = document.getElementById('returnDateField');
+//         const oneWayRadio = document.querySelector('input[name="tripType"][value="oneway"]');
+//         returnDateField.style.display = oneWayRadio.checked ? 'none' : 'block';
+//     }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        toggleReturnDate(); 
-        document.querySelectorAll('input[name="tripType"]').forEach(radio => {
-            radio.addEventListener('change', toggleReturnDate);
-        });
-    });
+//     document.addEventListener('DOMContentLoaded', function() {
+//         toggleReturnDate(); 
+//         document.querySelectorAll('input[name="tripType"]').forEach(radio => {
+//             radio.addEventListener('change', toggleReturnDate);
+//         });
+//     });
 
 
 
-let index = 0;
-const titleElement = document.querySelector('.card-title');
-const contentElement = document.querySelector('.card-text');
-const updatedElement = document.querySelector('.text-muted');
+// let index = 0;
+// const titleElement = document.querySelector('.card-title');
+// const contentElement = document.querySelector('.card-text');
+// const updatedElement = document.querySelector('.text-muted');
 
-function changeText() {
-titleElement.textContent = texts[index].title;
-contentElement.textContent = texts[index].content;
-updatedElement.textContent = texts[index].updated;
-index = (index + 1) % texts.length;
-}
+// function changeText() {
+// titleElement.textContent = texts[index].title;
+// contentElement.textContent = texts[index].content;
+// updatedElement.textContent = texts[index].updated;
+// index = (index + 1) % texts.length;
+// }
 
-setInterval(changeText, 10000); 
- </script>
+// setInterval(changeText, 10000); 
+//  </script>
