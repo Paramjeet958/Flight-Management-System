@@ -47,34 +47,37 @@
                                     <input class="form-control" id="flightName" name="flightName" type="text" placeholder="Flight Name"value="<%= flightName %>"  />
                                 </div>
                                 <div class="mb-3">
-                                    <!-- <label for="returnDate" class="form-label">Return Date</label> -->
-                                    <input class="form-control" id="origin" name="origin" type="text" placeholder="origin"  value="<%= origin %>" />
+                                    <select class="form-control" id="departure" name="origin" data-sb-validations="origin:required">
+                                        <option value="" disabled selected>Origin</option>
+                                        <option value="jfk">John F. Kennedy International Airport (USA)</option>
+                                        <option value="lhr">London Heathrow Airport (UK)</option>
+                                        <option value="cdg">Charles de Gaulle Airport (France)</option>
+                                        <option value="hnd">Tokyo Haneda Airport (Japan)</option>
+                                        <option value="syd">Sydney Kingsford Smith Airport (Australia)</option>
+                                    </select>
                                 </div>
                                 <div class="mb-3">
-                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
-                                    <input class="form-control" id="destination" name="destination" type="text" placeholder="destination" value="<%= destination %>"  />
+                                    <select class="form-control" id="destination" name="destination" data-sb-validations="destination:required">
+                                        <option value="" disabled selected>Destination</option>
+                                        <option value="jfk">John F. Kennedy International Airport (USA)</option>
+                                        <option value="lhr">London Heathrow Airport (UK)</option>
+                                        <option value="cdg">Charles de Gaulle Airport (France)</option>
+                                        <option value="hnd">Tokyo Haneda Airport (Japan)</option>
+                                        <option value="syd">Sydney Kingsford Smith Airport (Australia)</option>
+                                    </select>
                                 </div>
+                             
                                 <div class="mb-3">
                                     <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
-                                    <input class="form-control" id="duration" name="duration" type="number" placeholder="duration" value="<%= duration %>"  />
+                                    <input class="form-control" id="departureDate" name="departureDate" type="datetime-local" placeholder="departureDate" value="<%= departureDate %>" />
                                 </div>
-                                <div class="mb-3">
-                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
-                                    <input class="form-control" id="departureDate" name="departureDate" type="date" placeholder="departureDate" value="<%= departureDate %>" />
-                                </div>
-                                <div class="mb-3">
-                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
-                                    <input class="form-control" id="departureTime" name="departureTime" type="time" placeholder="departureTime" value="<%= departureTime %>" />
-                                </div>
+                              
                                 
                                 <div class="mb-3">
                                     <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
-                                    <input class="form-control" id="arrivalDate" name="arrivalDate" type="date" placeholder="arrivalDate" value="<%= arrivalDate %>"  />
+                                    <input class="form-control" id="arrivalDate" name="arrivalDate" type="datetime-local" placeholder="arrivalDate" value="<%= arrivalDate %>"  />
                                 </div>
-                                <div class="mb-3">
-                                    <!-- <label for="passengers" class="form-label">Number of Passengers</label> -->
-                                    <input class="form-control" id="arrivalTime" name="arrivalTime" type="time" placeholder="arrivalTime" value="<%= arrivalTime %>"  />
-                                </div>
+                               
                                 <div class="mb-3">
                                    
                                     

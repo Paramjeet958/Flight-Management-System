@@ -10,11 +10,9 @@ const FlightSchema = new Schema({
     flightName: {type: String, required:[true,'Please provide Flight Name']},
     origin:{type: String, required:[true,'Please provide Departure']},
     destination: {type: String, required:[true,'Please provide Destination']},
-    duration: {type: Number, required:[true,'Please provide Duration in Minutes']},
+    duration: Number,
     departureDate: { type: Date, required: [true,'Please provide Departure Date'] },
-    departureTime: { type: String, required: [true,'Please provide Departure Time'] },
     arrivalDate: { type: Date, required: [true,'Please provide Arrival Date'] },
-    arrivalTime: { type: String, required: [true,'Please provide Arrival Time'] },
     status: { type: String, enum: ['scheduled', 'delayed', 'cancelled', 'completed'], default: 'scheduled' },
 }, {
     timestamps: true
@@ -22,5 +20,13 @@ const FlightSchema = new Schema({
    
 
 );
+FlightSchema.pre('save', function(next) {
+    const flight = this;
+    if (flight.departureDate && flight.arrivalDate) {
+        const duration = (new Date(flight.arrivalDate) - new Date(flight.departureDate)) / (1000 * 60); // Convert milliseconds to minutes
+        flight.duration = duration;
+    }
+    next();
+});
 const Flights= mongoose.model('Flights',FlightSchema);
 module.exports=Flights
