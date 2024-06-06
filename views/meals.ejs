@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+    <%- include('layouts/header'); -%>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>help</title>
-    <link rel="stylesheet" href="meals.css">
+    <link href="/css/main.css" type="text/css" rel="stylesheet" /> 
+    <link href="/css/meals.css" type="text/css" rel="stylesheet">
 </head>
+
 <body>
+    <!-- Navigation-->
+    <%- include('layouts/navbar'); -%>
+
     <section class="container">
         <div class="brekfast">
             <h2>Breakfast</h2>
             <div class="d_flex">
                 <div class="w_25">
-                    <div class="box1">.</div>
+                    <div class="box1">
+                    </div>
                     <h3>idli sambar</h3>
                     <h5>Veg</h5>
                     <h6>10$</h6>
@@ -21,7 +26,7 @@
                     </a>
                 </div>
                 <div class="w_25">
-                    <div class="box2">.</div>
+                    <div class="box2"></div>
                     <h3>mango jusie</h3>
                     <h5>Veg</h5>
                     <h6>3$</h6>
@@ -132,5 +137,8 @@
             </div>
         </div>
     </section>
+     <!-- Footer-->
+     <%- include('layouts/footer'); -%>
+     <%- include('layouts/scripts'); -%>
 </body>
 </html>

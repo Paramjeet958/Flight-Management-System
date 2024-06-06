@@ -70,7 +70,11 @@
         border-radius: 15px;
     }
     .box1{
-        background-image: url("/assets/img/b1.jpg");
+      
+        /* background-image: url("img/img1.jpg"); */
+        /* background-image: url('/public/assets/img/b1.jpg'); */
+        /* background-image: url("/img/b1.jpg"); */
+        background: url('/assets/img/b1.jpg'); 
     }
     .box1:hover{
         background-image: url("/assets/img/2.jpg");

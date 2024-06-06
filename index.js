@@ -21,6 +21,11 @@ const addFlightController = require('./controllers/addFlight')
 const adminFlightsController = require('./controllers/adminFlights')
 const showFlights = require('./controllers/showFlights')
 const serviceController = require('./controllers/service')
+const petController = require('./controllers/pet')
+const tacController = require('./controllers/tac')
+const mealsController = require('./controllers/meals')
+
+
 global.loggedIn = null;
 app.use(flash());
 app.use(expressSession({
@@ -41,3 +46,6 @@ app.get('/adminFlights',adminFlightsController)
 app.post('/addFlight', addFlightController)
 app.post('/showFlights', showFlights)
 app.get('/service', serviceController)
+app.get('/meals', mealsController)
+app.get('/tac', tacController)
+app.get('/pet', petController)
