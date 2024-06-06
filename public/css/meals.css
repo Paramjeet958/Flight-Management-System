@@ -70,76 +70,76 @@
         border-radius: 15px;
     }
     .box1{
-        background-image: url("img/b1.jpg");
+        background-image: url("/assets/img/b1.jpg");
     }
     .box1:hover{
-        background-image: url("img/2.jpg");
+        background-image: url("/assets/img/2.jpg");
     }
     .box2{
-        background-image: url("img/b3.jpg");
+        background-image: url("/assets/img/b3.jpg");
     }
     .box2:hover{
-        background-image: url("img/4.jpg");
+        background-image: url("/assets/img/4.jpg");
     }
     .box3{
-        background-image: url("img/b5.jpg");
+        background-image: url("/assets/img/b5.jpg");
     }
     .box3:hover{
-        background-image: url("img/6.jpg");
+        background-image: url("/assets/img/6.jpg");
     }
     .box4{
-        background-image: url("img/b7.jpg");
+        background-image: url("/assets/img/b7.jpg");
     }
     .box4:hover{
-        background-image: url("img/8.jpg");
+        background-image: url("/assets/img/8.jpg");
     }
     .box5{
-        background-image: url("img/l1.jpg");
+        background-image: url("/assets/img/l1.jpg");
     }
     .box5:hover{
-        background-image: url("img/l2.jpg");
+        background-image: url("/assets/img/l2.jpg");
     }
     .box6{
-        background-image: url("img/l3.jpg");
+        background-image: url("/assets/img/l3.jpg");
     }
     .box6:hover{
-        background-image: url("img/l4.jpg");
+        background-image: url("/assets/img/l4.jpg");
     }
     .box7{
-        background-image: url("img/l5.jpg");
+        background-image: url("/assets/img/l5.jpg");
     }
     .box7:hover{
-        background-image: url("img/l6.jpg");
+        background-image: url("/assets/img/l6.jpg");
     }
     .box8{
-        background-image: url("img/l7.jpg");
+        background-image: url("/assets/img/l7.jpg");
     }
     .box8:hover{
-        background-image: url("img/l8.jpg");
+        background-image: url("/assets/img/l8.jpg");
     }
     .box9{
-        background-image: url("img/d1.jpg");
+        background-image: url("/assets/img/d1.jpg");
     }
     .box9:hover{
-        background-image: url("img/d2.jpg");
+        background-image: url("/assets/img/d2.jpg");
     }
     .box10{
-        background-image: url("img/d3.jpg");
+        background-image: url("/assets/img/d3.jpg");
     }
     .box10:hover{
-        background-image: url("img/d4.jpg");
+        background-image: url("/assets/img/d4.jpg");
     }
     .box11{
-        background-image: url("img/d5.jpg");
+        background-image: url("/assets/img/d5.jpg");
     }
     .box11:hover{
-        background-image: url("img/d6.jpg");
+        background-image: url("/assets/img/d6.jpg");
     }
     .box12{
-        background-image: url("img/d7.jpg");
+        background-image: url("/assets/img/d7.jpg");
     }
     .box12:hover{
-        background-image: url("img/d8.jpg");
+        background-image: url("/assets/img/d8.jpg");
     }
     a{
         text-align: center;
