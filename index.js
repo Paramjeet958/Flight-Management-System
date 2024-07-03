@@ -30,6 +30,7 @@ const loginController = require('./controllers/login')
 const userloginController = require('./controllers/userlogin')
 const myaccountController = require('./controllers/myaccount')
 const adminauthController = require('./controllers/adminauth')
+const logoutController = require('./controllers/logout')
 
 
 global.loggedIn = null;
@@ -61,6 +62,7 @@ app.get('/login', loginController)
 app.get('/userlogin', userloginController)
 app.get('/myaccount', myaccountController)
 app.get('/adminauth', adminauthController)
+app.get('/logout', logoutController)
 // app.get('/loginsignup', (req,res)=>{
 //     res.render('login_signup')
 // })
