@@ -26,11 +26,13 @@ const tacController = require('./controllers/tac')
 const mealsController = require('./controllers/meals')
 const signupController = require('./controllers/signup')
 const usersignupController = require('./controllers/usersignup')
+
 const loginController = require('./controllers/login')
 const userloginController = require('./controllers/userlogin')
 const myaccountController = require('./controllers/myaccount')
 const adminauthController = require('./controllers/adminauth')
 const logoutController = require('./controllers/logout')
+
 
 
 global.loggedIn = null;
@@ -57,6 +59,7 @@ app.post('/showFlights', showFlights)
 app.get('/service', serviceController)
 app.get('/meals', mealsController)
 app.get('/tac', tacController)
+
 app.get('/pet', petController)
 app.get('/login', loginController)
 app.get('/userlogin', userloginController)
@@ -66,3 +69,5 @@ app.get('/logout', logoutController)
 // app.get('/loginsignup', (req,res)=>{
 //     res.render('login_signup')
 // })
+
+app.get('/pet', petController)

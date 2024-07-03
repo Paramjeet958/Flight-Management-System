@@ -21,10 +21,7 @@
                     </ul>
                     <% } %>
                 </div>
-                <div class="col-sm-12 col-md-10 col-lg-8">
-                    <h3>Already Have Account?</h3>
-                <a href="/login" class="btn btn-primary">LOG IN</a>
-                </div>
+               
                 <form action= "/usersignup " id="signup" method="POST" data-sb-form-api-token="API_TOKEN" style="margin-left:auto; margin-right:auto;" class="col-lg-8 col-md-10 col-md-12" >
                     <div >
                         <label for="name">Username</label>
@@ -153,7 +150,10 @@
                     </div>
                 </form>
                
-                
+                <div class="col-sm-12 col-md-10 col-lg-8">
+                    <h3>Already Have Account?</h3>
+                <a href="/login" class="btn btn-primary">LOG IN</a>
+                </div>
         </main>
         <!-- Footer-->
         <%- include('layouts/footer'); -%>

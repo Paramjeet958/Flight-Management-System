@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Schedule</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <div class="container mt-5">
+        <h1>Search Flights</h1>
+        <form id="searchForm">
+            <div class="form-group">
+                <label for="origin">Origin</label>
+                <input type="text" class="form-control" id="origin" required>
+            </div>
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" id="destination" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Flight Name</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Duration (min)</th>
+                    <th>Departure Date</th>
+                    <th>Arrival Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="flightResults"></tbody>
+        </table>
+    </div>
+    
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const origin = document.getElementById('origin').value;
+            const destination = document.getElementById('destination').value;
+
+            const response = await fetch(`/api/flights?origin=${origin}&destination=${destination}`);
+            const flights = await response.json();
+
+            const results = document.getElementById('flightResults');
+            results.innerHTML = '';
+
+            flights.forEach(flight => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${flight.flightNumber}</td>
+                    <td>${flight.flightName}</td>
+                    <td>${flight.origin}</td>
+                    <td>${flight.destination}</td>
+                    <td>${flight.duration}</td>
+                    <td>${new Date(flight.departureDate).toLocaleString()}</td>
+                    <td>${new Date(flight.arrivalDate).toLocaleString()}</td>
+                    <td>${flight.status}</td>
+                `;
+                results.appendChild(row);
+            });
+        });
+    </script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

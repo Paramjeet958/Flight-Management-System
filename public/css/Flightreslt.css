@@ -1,0 +1,40 @@
+
+.card {
+    height: 100%;
+    background-color: bisque;
+}
+.color{
+    background-color: #d5b532;
+
+}
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust height based on your needs */
+    background-color: #efd682; /* Background color */
+}
+h1{
+    color: brown;
+    text-align: center;
+}
+.card {
+    height: 100%;
+    transition: background-color 0.5s ease-in-out;
+}
+.card:hover {
+    background-color: #b4d4f4; /* Lighter shade background on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Add shadow on hover */
+}
+.custom-btn {
+    background-color:  #FFA900; /* Replace with your desired custom color */
+    border-color: #ece6cd; /* Matching border color if needed */
+    color: #000; 
+    /* Text color */
+}
+button{
+    background-color:  #FFA900;
+}
+a:link{
+    text-decoration: none;
+}

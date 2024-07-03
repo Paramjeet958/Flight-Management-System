@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+    <%- include('layouts/header'); -%>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Flights</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/Flightreslt.css" type="text/css" rel="stylesheet"> 
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> 
+     <style>
+      
+    </style>
 </head>
 
 <body>
     <%- include('layouts/navbar'); -%>
+    <div class="color">
     <div class="container mt-5">
         <h1 class="mb-4">Available Flights</h1>
         <div class="row">
             <% flights.forEach(flight => { %>
                 <div class="col-md-4 mb-4">
-                    <div class="card" style="height: max-content;">
+                    <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><%= flight.flightName %></h5>
                             <h6 class="card-subtitle mb-2 text-muted"><%= flight.flightNumber %></h6>
                             <p class="card-text">
-                                <strong>From:</strong> <%= flight.origin %> <br>
-                                <strong>To:</strong> <%= flight.destination %> <br>
-                                <strong>Departure Date:</strong> <%= new Date(flight.departureDate).toDateString() %> <br>
-                                <strong>Arrival Date:</strong> <%= new Date(flight.arrivalDate).toDateString() %> <br>
+                                <strong>Details:</strong>
+                                <strong>From:</strong> <%= flight.origin %><br>
+                                <strong>To:</strong> <%= flight.destination %><br>
+                                <strong>Departure Date:</strong> <%= new Date(flight.departureDate).toDateString() %><br>
+                                <strong>Arrival Date:</strong> <%= new Date(flight.arrivalDate).toDateString() %><br>
                                 <strong>Duration:</strong> <%= flight.duration %> minutes
                             </p>
+                            <button><a href="/book/<%= flight._id %>" class="custom-btn">Book Now</a></button> <!-- Applied custom-btn class -->
                         </div>
                     </div>
                 </div>
             <% }) %>
         </div>
     </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+       <!-- Footer-->
+       <%- include('layouts/footer'); -%>
+       <%- include('layouts/scripts'); -%>
+           
 </body>
 </html>
