@@ -1,89 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('layouts/header'); -%>
+    <head>
+        <style>
+            .custom-card {
+    margin: 20px;
+    border-radius: 10px;
+}
+.custom-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+        </style>
+    </head>
     <body>
         <!-- Navigation-->
         <%- include('layouts/navbar'); -%>
-        <header class="masthead" style="background-color:rgb(43, 41, 41);">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="page-heading">
-                            <h1>LOGIN</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+      
         <!-- Main Content-->
         <main class="mb-4">
-          
-                            <div class="my-5"> 
-                                <div class="container">
-                                    <div class="row">
-                                    <div class="col-lg-8 col-md-10 mx-auto">
-                                    <% if(errors){ %>
-                                    <ul class="list-group"></ul>
-                                    <% for (var i = 0; i < errors.length; i++) { %>
-                                    <li class="list-group-item list-group-item-danger"><%=
-                                    errors[i] %></li>
-                                    <% } %>
-                                    </ul>
-                                    <% } %>
-                                </div>  
-                            <form action="/userlogin" id="login" method="POST "data-sb-form-api-token="API_TOKEN" style="width:70vw ;margin-left:auto; margin-right:auto;" >
-                            
-                                <div >
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <% if(errors){ %>
+                        <ul class="list-group">
+                            <% for (var i = 0; i < errors.length; i++) { %>
+                            <li class="list-group-item list-group-item-danger"><%= errors[i] %></li>
+                            <% } %>
+                        </ul>
+                        <% } %>
+                    </div>
+                    
+                    <div class="card col-lg-8 col-md-10">
+                       
+                        <div class="card-header bg-success text-white text-center custom-header">
+                            <h2>Login </h2>
+                        </div><br>
+                        <div class="card-body">
+                            <form action="/userlogin" id="login" method="POST" data-sb-form-api-token="API_TOKEN">
+                                <div class="form-group">
                                     <label for="userName">Username</label>
-                                    <input class="form-control" id="userName" name="userName"type="text" placeholder="Username" data-sb-validations="required" value="<% userName %>" />
-                                    
+                                    <input class="form-control" id="userName" name="userName" type="text" placeholder="Username" data-sb-validations="required" value="<% userName %>">
                                     <div class="invalid-feedback" data-sb-feedback="name:required">Username is required.</div>
                                 </div>
-                                <div >
-                                    <label for="password">password</label>
-                                    <input class="form-control" id="password" name="password"type="password" placeholder="Enter your password number..." data-sb-validations="required" />
-                                    
-                                    <div class="invalid-feedback" data-sb-feedback="license:required">Enter yor password</div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input class="form-control" id="password" name="password" type="password" placeholder="Enter your password..." data-sb-validations="required">
+                                    <div class="invalid-feedback" data-sb-feedback="license:required">Enter your password.</div>
                                 </div>
-                                <!-- <div >
-                                    <label for="userType">User Type</label>
-                                    <select id="userType" name="userType" class="form-select" aria-label=" select example" >
-                                        
-                                        <option value="customer">Customer</option>
-                                        <option value="Admin">Admin</option>
-                                      </select>
-                                    </div> -->
-                                    <!-- <div >
-                                        <label for="userType">User Type</label>
-                                        <input class="form-control" id="userType" name="userType"type="name" placeholder="UserType" data-sb-validations="required"  />
-                                        
-                                        <div class="invalid-feedback" data-sb-feedback="license:required">Enter</div>
-                                    </div> -->
-                                
-                                <br />
-                                
+                                <br>
                                 <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">
                                         <div class="fw-bolder">Form submission successful!</div>
                                         To activate this form, sign up at
-                                        <br />
+                                        <br>
                                         <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary"
-                                        id="sendMessageButton">LOGIN</button>
-                                        
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-success" id="sendMessageButton">LOGIN</button>
                                 </div>
-                               
                             </form>
-                            
-                        
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <!-- Footer-->
         <%- include('layouts/footer'); -%>
         <%- include('layouts/scripts'); -%>
     
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     </body>
 </html>
