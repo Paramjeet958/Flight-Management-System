@@ -1,4 +1,5 @@
 module.exports=(req,res)=>{
+    var adminPassword ="admin123"
    var flightNumber=""
    var flightName=""
    var origin=""
@@ -17,14 +18,22 @@ module.exports=(req,res)=>{
         arrivalDate=data.arrivalDate
         
     }
-    res.render('admin_flight', {
-        errors: req.flash('validationErrors'),
-        flightNumber: flightNumber,
-        flightName:flightName,
-        origin:origin,
-        destination:destination,
-        departureDate:departureDate,
-        arrivalDate:arrivalDate     
-
-    })
+    
+    if(req.query.password == adminPassword){
+        res.render('admin_flight', {
+            errors: req.flash('validationErrors'),
+            flightNumber: flightNumber,
+            flightName:flightName,
+            origin:origin,
+            destination:destination,
+            departureDate:departureDate,
+            arrivalDate:arrivalDate     
+    
+        })
+    }
+    else{
+        res.redirect('/adminauth')
+        
+    }
+   
 }

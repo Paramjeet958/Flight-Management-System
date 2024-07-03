@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+            <%- include('layouts/navbar'); -%>
+          
+        <!-- Main Content-->
+
+        <main class="mb-4">
+            <div class="my-5"> 
+                <div class="container">
+                    <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                    <% if(errors != null && errors.length > 0){ %>
+                    <ul class="list-group"></ul>
+                    <% for (var i = 0; i < errors.length; i++) { %>
+                    <li class="list-group-item list-group-item-danger"><%=
+                    errors[i] %></li>
+                    <% } %>
+                    </ul>
+                    <% } %>
+                </div>
+               
+                <form action= "/usersignup " id="signup" method="POST" data-sb-form-api-token="API_TOKEN" style="margin-left:auto; margin-right:auto;" class="col-lg-8 col-md-10 col-md-12" >
+                    <div >
+                        <label for="name">Username</label>
+                        <input class="form-control" id="userName" name="userName" type="text" placeholder="Username" data-sb-validations="userName:required" value="<%= userName %>" />
+                        
+                        <div class="invalid-feedback" data-sb-feedback="name:required">This field is required.</div>
+                    </div>
+                    <div >
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Password"
+                        id="password" name="password" value="<%= password %>">
+                        
+                        <div class="form-group floating-label-form-group controls">
+                       
+                        </div>
+                    </div>
+                    <div >
+                        <label for="email">Confirm Password</label>
+                        <input class="form-control" id="cpassword" name="cpassword "type="password" placeholder="Confirm Password" data-sb-validations="required" />
+                        
+                        <div class="invalid-feedback" data-sb-feedback="password:required">This Field is required.</div>
+                    </div>
+                 
+                    <div >
+                        <label>First Name</label>
+                        <input type="Name" class="form-control" placeholder="FirstName"
+                        id="fname" name="fname" value="<%= fname %>">
+                        
+                        <div class="form-group floating-label-form-group controls">
+                       
+                        </div>
+                        <div >
+                            <label>Last Name</label>
+                            <input type="Name" class="form-control" placeholder="LastName"
+                            id="lname" name="lname" value="<%= lname %>">
+                            
+                            <div class="form-group floating-label-form-group controls">
+                           
+                            </div>
+                            <div >
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="email"
+                                id="email" name="email" value="<%= email %>">
+                               
+                                <div class="form-group floating-label-form-group controls">
+                               
+                                </div>
+                                <div >
+                                    <label>Phone Number</label>
+                                    <input type="phone" class="form-control" placeholder="phone"
+                                    id="phone" name="phone" value="<%= phone %>">
+                                    
+                                    <div class="form-group floating-label-form-group controls">
+                                   
+                                    </div>
+                                    <div >
+                                        <label>Street</label>
+                                        <input type="Street" class="form-control" placeholder="street"
+                                        id="street" name="street" value="<%= street %>">
+                                        
+                                        <div class="form-group floating-label-form-group controls">
+                                       
+                                        </div>
+                                        <div >
+                                            <label>City</label>
+                                            <input type="City" class="form-control" placeholder="city"
+                                            id="city" name="city" value="<%= city %>">
+                                            
+                                            <div class="form-group floating-label-form-group controls">
+                                           
+                                            </div>
+                                            <div >
+                                                <label>State</label>
+                                                <input type="state" class="form-control" placeholder="state"
+                                                id="state" name="state" value="<%= state %>">
+                                                
+                                                <div class="form-group floating-label-form-group controls">
+                                               
+                                                </div>
+                                                <div>
+                                                    <label>Zip</label>
+                                                    <input type="zip" class="form-control" placeholder="zip"
+                                                    id="zip" name="zip" value="<%= zip %>">
+                                                    
+                                                    <div class="form-group floating-label-form-group controls">
+                                                   
+                                                    </div>
+                                                    <div >
+                                                        <label>Country</label>
+                                                        <input type="country" class="form-control" placeholder="country"
+                                                        id="country" name="country" value="<%= country %>">
+                                                        
+                                                        <div class="form-group floating-label-form-group controls">
+                                                       
+                                                        </div>
+                                                        <div >
+                                                            <label>Date Of Birth</label>
+                                                            <input type="date" class="form-control" placeholder="dateOfBirth"
+                                                            id="dateOfBirth" name="dateOfBirth" value="<%= dateOfBirth %>">
+                                                            
+                                                            <div class="form-group floating-label-form-group controls">
+                                                           
+                                                            </div>
+                                                            <div >
+                                                                <label>Passport Number</label>
+                                                                <input type="passportNumber" class="form-control" placeholder="passportNumber"
+                                                                id="passportNumber" name="passportNumber" value="<%= passportNumber %>">
+                                                                
+                                                                <div class="form-group floating-label-form-group controls">
+                                                               
+                                                                </div>
+                    <br />
+                    
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br />
+                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary"
+                            id="sendMessageButton">SIGNUP</button>
+                            
+                    </div>
+                </form>
+               
+                <div class="col-sm-12 col-md-10 col-lg-8">
+                    <h3>Already Have Account?</h3>
+                <a href="/login" class="btn btn-primary">LOG IN</a>
+                </div>
+        </main>
+        <!-- Footer-->
+        <%- include('layouts/footer'); -%>
+        <%- include('layouts/scripts'); -%>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
