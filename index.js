@@ -1,9 +1,12 @@
+const Flights = require('./models/Flights');
+
 const express=require('express')
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 mongoose.connect('mongodb+srv://ssabrup:sabrup@cluster0.tzbx683.mongodb.net/?retryWrites=true&w=majority', {useNewUrlParser:true});
 const path=require('path')
 const ejs=require('ejs')
+
 
 const app=new express()
 const expressSession = require('express-session');
@@ -32,6 +35,8 @@ const userloginController = require('./controllers/userlogin')
 const myaccountController = require('./controllers/myaccount')
 const adminauthController = require('./controllers/adminauth')
 const logoutController = require('./controllers/logout')
+// const schduleController = require('./controllers/showallflights')
+
 
 
 
@@ -66,8 +71,20 @@ app.get('/userlogin', userloginController)
 app.get('/myaccount', myaccountController)
 app.get('/adminauth', adminauthController)
 app.get('/logout', logoutController)
+
 // app.get('/loginsignup', (req,res)=>{
 //     res.render('login_signup')
 // })
 
 app.get('/pet', petController)
+app.get('/allFlights', (req, res) => {
+    Flights.find()
+        .then(flights => {
+            res.render('allFlights', { flights });
+        })
+        .catch(err => {
+            console.error('Error fetching flights:', err);
+            res.status(500).send('Internal Server Error');
+        });
+});
+
