@@ -37,15 +37,15 @@
                             <h2>Login </h2>
                         </div><br>
                         <div class="card-body">
-                            <form action="/userlogin" id="login" method="POST" data-sb-form-api-token="API_TOKEN">
-                                <div class="form-group">
+                            <form action="/userlogin" id="login" method="POST "data-sb-form-api-token="API_TOKEN" style="width:70vw ;margin-left:auto; margin-right:auto;" >
+                            <div class="form-group">
                                     <label for="userName">Username</label>
-                                    <input class="form-control" id="userName" name="userName" type="text" placeholder="Username" data-sb-validations="required" value="<% userName %>">
+                                    <input class="form-control" id="userName" name="userName" type="text" placeholder="Username" data-sb-validations="required" value="<% userName %>"/>
                                     <div class="invalid-feedback" data-sb-feedback="name:required">Username is required.</div>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Password</label>
-                                    <input class="form-control" id="password" name="password" type="password" placeholder="Enter your password..." data-sb-validations="required">
+                                    <input class="form-control" id="password" name="password" type="password" placeholder="Enter your password..." data-sb-validations="required"/>
                                     <div class="invalid-feedback" data-sb-feedback="license:required">Enter your password.</div>
                                 </div>
                                 <br>
