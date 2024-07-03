@@ -24,6 +24,7 @@ const serviceController = require('./controllers/service')
 const petController = require('./controllers/pet')
 const tacController = require('./controllers/tac')
 const mealsController = require('./controllers/meals')
+const mytripController = require('./controllers/mytrip')
 
 
 global.loggedIn = null;
@@ -49,3 +50,4 @@ app.get('/service', serviceController)
 app.get('/meals', mealsController)
 app.get('/tac', tacController)
 app.get('/pet', petController)
+app.get('/mytrip', mytripController)
