@@ -14,6 +14,14 @@ const FlightSchema = new Schema({
     departureDate: { type: Date, required: [true,'Please provide Departure Date'] },
     arrivalDate: { type: Date, required: [true,'Please provide Arrival Date'] },
     status: { type: String, enum: ['scheduled', 'delayed', 'cancelled', 'completed'], default: 'scheduled' },
+    createdAt: {
+        type: Date,
+        default: Date.now
+      },
+      updatedAt: {
+        type: Date,
+        default: Date.now
+      }
 }, {
     timestamps: true
 }

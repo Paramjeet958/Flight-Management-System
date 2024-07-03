@@ -24,6 +24,12 @@ const serviceController = require('./controllers/service')
 const petController = require('./controllers/pet')
 const tacController = require('./controllers/tac')
 const mealsController = require('./controllers/meals')
+const signupController = require('./controllers/signup')
+const usersignupController = require('./controllers/usersignup')
+const loginController = require('./controllers/login')
+const userloginController = require('./controllers/userlogin')
+const myaccountController = require('./controllers/myaccount')
+const adminauthController = require('./controllers/adminauth')
 
 
 global.loggedIn = null;
@@ -32,7 +38,7 @@ app.use(expressSession({
     secret: 'Flight_management'
     }))
     app.use("*", (req, res, next) => {
-        // loggedIn = req.session.userId;
+        loggedIn = req.session.userId;
        
       
         next()
@@ -42,6 +48,8 @@ app.listen(4000,(req,res)=>{
 })
 
 app.get('/',dashboardController)
+app.get('/signup', signupController)
+app.post('/usersignup', usersignupController)
 app.get('/adminFlights',adminFlightsController)
 app.post('/addFlight', addFlightController)
 app.post('/showFlights', showFlights)
@@ -49,3 +57,10 @@ app.get('/service', serviceController)
 app.get('/meals', mealsController)
 app.get('/tac', tacController)
 app.get('/pet', petController)
+app.get('/login', loginController)
+app.get('/userlogin', userloginController)
+app.get('/myaccount', myaccountController)
+app.get('/adminauth', adminauthController)
+// app.get('/loginsignup', (req,res)=>{
+//     res.render('login_signup')
+// })
