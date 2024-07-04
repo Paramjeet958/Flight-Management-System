@@ -12,7 +12,17 @@
                     <div class="card-header bg-success text-white text-center">
                         <h2>Login Admin</h2>
                     </div>
+                   
                     <div class="card-body">
+                        <div >
+                            <% if(errors){ %>
+                            <ul class="list-group">
+                                <% for (var i = 0; i < errors.length; i++) { %>
+                                <li class="list-group-item list-group-item-danger"><%= errors[i] %></li>
+                                <% } %>
+                            </ul>
+                            <% } %>
+                        </div>
                             <form action="/adminFlights" id="login" method="POST "data-sb-form-api-token="API_TOKEN" style="width:70vw ;margin-left:auto; margin-right:auto;" >
                             
                     

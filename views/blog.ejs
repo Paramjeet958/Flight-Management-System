@@ -1,20 +1,21 @@
+
 <!DOCTYPE html>
 <html lang="en">
+<%- include('layouts/header'); -%>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/da82c552d0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/blog.css">
+    <link href="/css/blog.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
-    <section class="section1 padding_bottem">
-        <div class="bg_img layer">
+    <!-- Navigation-->
+    <%- include('layouts/navbar'); -%>
 
-            <h1 class="layer">Blog</h1>
-        </div>
+<body>
+    <section class="section1 padding_bottem">
+        <div class="card-header bg-success text-white text-center custom-header">
+            <h2>Blog</h2>
+        </div><br>
     </section>
     <div class="container">
         <section class="section2 padding_bottem">
@@ -193,6 +194,9 @@
             </div>
         </section>
     </div>
+      <!-- Footer-->
+      <%- include('layouts/footer'); -%>
+      <%- include('layouts/scripts'); -%>
 </body>
 
 </html>

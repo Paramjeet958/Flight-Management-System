@@ -4,7 +4,13 @@
 <head>
     <link href="/css/allflights.css" type="text/css" rel="stylesheet"> 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> 
-    
+    <style>
+      
+        tbody tr:hover {
+            font-weight: bold;
+            background-color: #bcbbbb; /* Light grey background on hover */
+        }
+    </style>
 </head>
 <body>
     <%- include('layouts/navbar'); -%>
@@ -28,7 +34,7 @@
                 </thead>
                 <tbody>
                     <% flights.forEach(flight => { %>
-                        <tr>
+                        <tr >
                             <td><%= flight.flightNumber %></td>
                             <td><%= flight.flightName %></td>
                             <td><%= flight.origin %></td>

@@ -32,8 +32,11 @@ module.exports=(req,res)=>{
         })
     }
     else{
-        res.redirect('/adminauth')
+        const validationError="Please Enter Correct Password";
+        req.flash("validationError",validationError)
         
+        res.redirect('/adminauth')    
+            
     }
    
 }

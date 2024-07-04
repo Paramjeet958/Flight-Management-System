@@ -36,6 +36,7 @@ const myaccountController = require('./controllers/myaccount')
 const adminauthController = require('./controllers/adminauth')
 const logoutController = require('./controllers/logout')
 // const schduleController = require('./controllers/showallflights')
+const blogController = require('./controllers/blogController')
 
 
 
@@ -75,7 +76,7 @@ app.get('/logout', logoutController)
 // app.get('/loginsignup', (req,res)=>{
 //     res.render('login_signup')
 // })
-
+app.get('/blog', blogController)
 app.get('/pet', petController)
 app.get('/allFlights', (req, res) => {
     Flights.find()
