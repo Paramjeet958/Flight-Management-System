@@ -33,22 +33,22 @@ const usersignupController = require('./controllers/usersignup')
 const loginController = require('./controllers/login')
 const userloginController = require('./controllers/userlogin')
 const myaccountController = require('./controllers/myaccount')
-const adminauthController = require('./controllers/adminauth')
 const logoutController = require('./controllers/logout')
 // const schduleController = require('./controllers/showallflights')
 const blogController = require('./controllers/blogController')
 
-
+const updateProfileController = require('./controllers/updateProfile')
 
 
 global.loggedIn = null;
+global.uType = "";
 app.use(flash());
 app.use(expressSession({
     secret: 'Flight_management'
     }))
     app.use("*", (req, res, next) => {
         loggedIn = req.session.userId;
-       
+       uType=req.session.userType
       
         next()
     });
@@ -70,8 +70,8 @@ app.get('/pet', petController)
 app.get('/login', loginController)
 app.get('/userlogin', userloginController)
 app.get('/myaccount', myaccountController)
-app.get('/adminauth', adminauthController)
 app.get('/logout', logoutController)
+app.post('/updateProfile', updateProfileController)
 
 // app.get('/loginsignup', (req,res)=>{
 //     res.render('login_signup')

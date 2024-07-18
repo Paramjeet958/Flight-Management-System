@@ -1,14 +1,12 @@
 module.exports=(req,res)=>{
     var username = ""
     var password = ""
-    var email=""
    
 
     const data = req.flash('data')[0];
     if (typeof data != "undefined") {
         username = data.userName
         password = data.password
-        email =  data.email
 
     }
 
@@ -16,8 +14,7 @@ module.exports=(req,res)=>{
         //errors: req.session.validationErrors
         errors: req.flash('validationErrors'),
         userName: username,
-        password: password,
-        email:email,
+        password: password
         
 
     })

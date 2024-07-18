@@ -39,6 +39,11 @@
                             </div><br>
                             <form action="/usersignup" id="signup" method="POST" data-sb-form-api-token="API_TOKEN">
                                 <div class="form-group">
+                            
+                                    <input class="form-control" id="userType" name="userType" type="text" placeholder="userType" data-sb-validations="userName:required" value="customer" hidden>
+                                    <div class="invalid-feedback" data-sb-feedback="userName:required">This field is required.</div>
+                                </div>
+                                <div class="form-group">
                                     <label for="userName">Username</label>
                                     <input class="form-control" id="userName" name="userName" type="text" placeholder="Username" data-sb-validations="userName:required" value="<%= userName %>">
                                     <div class="invalid-feedback" data-sb-feedback="userName:required">This field is required.</div>

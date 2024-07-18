@@ -19,7 +19,7 @@ module.exports=(req,res)=>{
         
     }
     
-    if(req.query.password == adminPassword){
+    
         res.render('admin_flight', {
             errors: req.flash('validationErrors'),
             flightNumber: flightNumber,
@@ -30,13 +30,7 @@ module.exports=(req,res)=>{
             arrivalDate:arrivalDate     
     
         })
-    }
-    else{
-        const validationError="Please Enter Correct Password";
-        req.flash("validationError",validationError)
-        
-        res.redirect('/adminauth')    
-            
-    }
+    
+   
    
 }

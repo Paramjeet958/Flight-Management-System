@@ -14,7 +14,7 @@
                         <div class="card-header bg-success text-white text-center custom-header">
                             <h2>My Account</h2>
                         </div><br>
-                        <form action="/update" id="update" method="POST" data-sb-form-api-token="API_TOKEN">
+                        <form action="/updateProfile" id="update" method="POST" data-sb-form-api-token="API_TOKEN">
                             <div class="mb-3">
                                 <label for="userName" class="form-label">Username</label>
                                 <input class="form-control" id="userName" name="userName" type="text" placeholder="Username" data-sb-validations="userName:required" value="<%= userName %>" disabled />
@@ -68,7 +68,7 @@
                             
                             <div class="mb-3">
                                 <label for="dateOfBirth" class="form-label">Date Of Birth</label>
-                                <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" placeholder="Date Of Birth" value="<%= dateOfBirth %>">
+                                <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" placeholder="Date Of Birth" value="<%= dateOfBirth %>" required>
                             </div>
                             
                             <div class="mb-3">

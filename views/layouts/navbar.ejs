@@ -9,14 +9,24 @@
         </button> -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                <% if(loggedIn) { %>
+                <% if(loggedIn) {
+                    if(uType == "customer"){ %>
                 <li class="nav-item" ><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;"  href="/">Home</a></li>
 
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/allFlights">All Flights</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/service">SERVICES</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/myaccount">MY Account</a></li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/logout">Log Out</a></li>
-                <% } %>
+                <% } 
+                else{%>
+                    <li class="nav-item" ><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;"  href="/">Home</a></li>
+
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/allFlights">All Flights</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/service">SERVICES</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/logout">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/adminFlights">ADD FLIGHTS</a></li>
+
+                    <%  }}%>
                 <% if(!loggedIn) { %>
                     <li class="nav-item" ><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;"  href="/">Home</a></li>
 
@@ -25,7 +35,6 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/blog">BLOG</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/signup">SIGN UP</a></li>
                 
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" style="color: black;" href="/adminauth">ADMIN</a></li>
 
               
                 <% } %>
