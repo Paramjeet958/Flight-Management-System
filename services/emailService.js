@@ -3,9 +3,9 @@
 // const { google } = require('googleapis');
 // const nodemailer = require('nodemailer');
 
-// const clientId = '503410003391-egulvbboa00ok7q9g2ftjun7npi6g3ie.apps.googleusercontent.com';
-// const clientSecret = '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';
-// const refreshToken = '1//04Vcd-_dWe7VrCgYIARAAGAQSNwF-L9IrON8cx_OmGLV5x55xUoenAsVoUM6waLKYdGunmvo3x11Jhof8hDihIrMfK37zUXutEIM';
+// const clientId = '########;
+// const clientSecret = '######';
+// const refreshToken = '#####';
 // const redirectUri = 'https://developers.google.com/oauthplayground';
 
 // const OAuth2 = google.auth.OAuth2;
