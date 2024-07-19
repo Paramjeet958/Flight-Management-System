@@ -41,6 +41,7 @@ const updateProfileController = require('./controllers/updateProfile')
 const redirectIfAutheticatedMiddleware = require('./views/middleWare/redirectAuthenticationMiddleWare.js');
 const authMiddleware=require('./views/middleWare/authMiddleWare')
 const allFlightsController = require('./controllers/allFlights.js')
+const updateUserPageController = require('./controllers/updateUserPage.js')
 global.loggedIn = null;
 global.uType = "";
 app.use(flash());
@@ -76,6 +77,7 @@ app.post('/updateProfile', updateProfileController)
 app.get('/blog', blogController)
 app.get('/pet', petController)
 app.get('/allFlights', allFlightsController);
+app.get('/updateUserPage', updateUserPageController)
 app.use((req, res) => res.render('notFound'));
 
 
