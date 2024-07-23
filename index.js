@@ -33,23 +33,26 @@ const usersignupController = require('./controllers/usersignup')
 const loginController = require('./controllers/login')
 const userloginController = require('./controllers/userlogin')
 const myaccountController = require('./controllers/myaccount')
-const adminauthController = require('./controllers/adminauth')
 const logoutController = require('./controllers/logout')
 const seatController = require('./controllers/seatselection')
 const chcekoutController = require('./controllers/checkout')
 // const schduleController = require('./controllers/showallflights')
+const blogController = require('./controllers/blogController')
 
-
-
-
+const updateProfileController = require('./controllers/updateProfile')
+const redirectIfAutheticatedMiddleware = require('./views/middleWare/redirectAuthenticationMiddleWare.js');
+const authMiddleware=require('./views/middleWare/authMiddleWare')
+const allFlightsController = require('./controllers/allFlights.js')
+const updateUserPageController = require('./controllers/updateUserPage.js')
 global.loggedIn = null;
+global.uType = "";
 app.use(flash());
 app.use(expressSession({
     secret: 'Flight_management'
     }))
     app.use("*", (req, res, next) => {
         loggedIn = req.session.userId;
-       
+       uType=req.session.userType
       
         next()
     });
@@ -59,8 +62,8 @@ app.listen(4000,(req,res)=>{
 
 app.get('/',dashboardController)
 app.get('/signup', signupController)
-app.post('/usersignup', usersignupController)
-app.get('/adminFlights',adminFlightsController)
+app.post('/usersignup', redirectIfAutheticatedMiddleware, usersignupController)
+app.get('/adminFlights', authMiddleware, adminFlightsController)
 app.post('/addFlight', addFlightController)
 app.post('/showFlights', showFlights)
 app.get('/service', serviceController)
@@ -69,9 +72,8 @@ app.get('/tac', tacController)
 
 app.get('/pet', petController)
 app.get('/login', loginController)
-app.get('/userlogin', userloginController)
-app.get('/myaccount', myaccountController)
-app.get('/adminauth', adminauthController)
+app.get('/userlogin', redirectIfAutheticatedMiddleware, userloginController)
+app.get('/myaccount',authMiddleware, myaccountController)
 app.get('/logout', logoutController)
 app.get('/seatselection',seatController)
 app.get('/checkout', chcekoutController)
@@ -144,3 +146,13 @@ app.get('/allFlights', (req, res) => {
             res.status(500).send('Internal Server Error');
         });
 });
+
+app.post('/updateProfile', updateProfileController)
+app.get('/blog', blogController)
+app.get('/pet', petController)
+app.get('/allFlights', allFlightsController);
+app.get('/updateUserPage', updateUserPageController)
+app.use((req, res) => res.render('notFound'));
+
+
+

@@ -1,0 +1,758 @@
+@media (min-width:0px) and (max-width: 600px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .padding_bottem{
+        padding-bottom: 20px;
+    }
+    .section1 .bg_img{
+        background-image: url("img/plan.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    .layer{
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .section1 h1{
+        font-size: 25px;
+        text-align: center;
+        padding:120px ;
+        color: whitesmoke;
+        letter-spacing: 12px;
+    }
+    .section2{
+        text-align: center;
+    }
+    .section2 h2{
+        font-size: 22px;
+        display: inline-block;
+        border-bottom: 1px solid gold;
+        border-top: 1px solid gold;
+        border-top-left-radius: 13px;
+        border-bottom-left-radius: 13px;
+        border-top-right-radius: 13px;
+        border-bottom-right-radius: 13px;
+        padding:5px;
+        margin-bottom: 25px;
+    }
+    .section2 .circle{
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 1.5px solid black;
+    }
+    .d_flex{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .section2 h4{
+        text-align: center;
+        font-size: 15px;
+        padding-top: 12px;
+    }
+    
+    .section2 h3{
+        text-align: center;
+        font-size: 14px;
+        color: gold;
+        line-height: 70px;
+    }
+    .section3 .brand h1{
+        font-size: 20px;
+        color: gold;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .w_50{
+        width: 50%;
+    }
+    .details1{
+        background-image: url("img/delta.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details1 p,.details2 p,.details3 p,.details4 p,.details5 p,.details6 p{
+        color: whitesmoke;
+        text-align: center;
+        font-size: 13px;
+        padding: 2px;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    .pad{
+        background-color: rgba(0, 0, 0, 0);
+        padding: 35px;
+        transition: all 0.5s;
+    }
+    .right{
+        text-align: right;
+    }
+    .brand_name h6{
+        font-size: 22px;
+        text-transform: capitalize;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .details1:hover .pad,.details2:hover .pad,.details3:hover .pad,.details4:hover .pad,.details5:hover .pad,.details6:hover .pad{
+        background-color: rgba(0, 0, 0, 0.423);
+    }
+    .details1:hover p,.details2:hover p,.details3:hover p,.details4:hover p,.details5:hover p,.details6:hover p{
+        opacity: 1;
+    }
+    .padding1{
+        padding-bottom: 25px;
+    }
+    .details2{
+        background-image: url("img/American_airline.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details3{
+        background-image: url("img/United_Airlines.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details4{
+        background-image: url("img/Emirates.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details5{
+        background-image: url("img/Southwest_Airlines.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details6{
+        background-image: url("img/China_Southern.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .section4{
+        text-align: center;
+        margin: 0 auto;
+    }
+    .section4 h1{
+        color: gold;
+        font-size: 24px;
+        padding: 12px;
+        text-align: center;
+    }
+    video{
+        max-width:350px;
+        height: auto;
+        border-radius: 20px;
+        border: 1px solid black;
+    }
+    .section5 h1{
+        text-align: center;
+        color: gold;
+        padding: 20px;
+        font-size: 284x;
+    }
+    .blog{
+        border: 1.5px solid black;
+        padding: 12px;
+        margin: 10px;
+    }
+    .comment{
+        width: 100%;
+        background-color: #3c6897;
+        color: whitesmoke;
+        padding: 12px 25px;
+        margin: 12px 0px;
+    }
+    .blog h2{
+        font-size: 20px;
+    }
+    .blog h3{
+        font-size: 15px;
+    }
+    .comment h4{
+        font-size: 15px;
+    }
+}
+@media (min-width:601px) and (max-width: 900px) {
+    
+    .container{
+        max-width: 	650px;
+        margin: 0 auto;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .padding_bottem{
+        padding-bottom: 30px;
+    }
+    .section1 .bg_img{
+        background-image: url("img/plan.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    .layer{
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .section1 h1{
+        font-size: 30px;
+        text-align: center;
+        padding:150px ;
+        color: whitesmoke;
+        letter-spacing: 15px;
+    }
+    .section2{
+        text-align: center;
+    }
+    .section2 h2{
+        font-size: 30px;
+        display: inline-block;
+        border-bottom: 1px solid gold;
+        border-top: 1px solid gold;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding:7px;
+        margin-bottom: 35px;
+    }
+    .section2 .circle{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 3px solid black;
+    }
+    .d_flex{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .section2 h4{
+        text-align: center;
+        font-size: 18px;
+        padding-top: 15px;
+    }
+    
+    .section2 h3{
+        text-align: center;
+        font-size: 19px;
+        color: gold;
+        line-height: 95px;
+    }
+    .section3 .brand h1{
+        font-size: 25px;
+        color: gold;
+        text-align: center;
+        padding-bottom: 25px;
+    }
+    .w_50{
+        width: 50%;
+    }
+    .details1{
+        background-image: url("img/delta.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details1 p,.details2 p,.details3 p,.details4 p,.details5 p,.details6 p{
+        color: whitesmoke;
+        text-align: center;
+        font-size: 15px;
+        padding: 4px;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    .pad{
+        background-color: rgba(0, 0, 0, 0);
+        padding: 45px;
+        transition: all 0.5s;
+    }
+    .right{
+        text-align: right;
+    }
+    .brand_name h6{
+        font-size: 28px;
+        text-transform: capitalize;
+    }
+    .details1:hover .pad,.details2:hover .pad,.details3:hover .pad,.details4:hover .pad,.details5:hover .pad,.details6:hover .pad{
+        background-color: rgba(0, 0, 0, 0.423);
+    }
+    .details1:hover p,.details2:hover p,.details3:hover p,.details4:hover p,.details5:hover p,.details6:hover p{
+        opacity: 1;
+    }
+    .padding1{
+        padding-bottom: 35px;
+    }
+    .details2{
+        background-image: url("img/American_airline.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details3{
+        background-image: url("img/United_Airlines.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details4{
+        background-image: url("img/Emirates.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details5{
+        background-image: url("img/Southwest_Airlines.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details6{
+        background-image: url("img/China_Southern.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .section4{
+        text-align: center;
+        margin: 0 auto;
+    }
+    .section4 h1{
+        color: gold;
+        font-size: 32px;
+        padding: 15px;
+        text-align: center;
+    }
+    video{
+        max-width:501px;
+        height: auto;
+        border-radius: 25px;
+        border: 1px solid black;
+    }
+    .section5 h1{
+        text-align: center;
+        color: gold;
+        padding: 30px;
+        font-size: 28px;
+    }
+    .blog{
+        border: 3px solid black;
+        padding: 15px;
+        margin: 14px;
+    }
+    .comment{
+        width: 100%;
+        background-color: #3c6897;
+        color: whitesmoke;
+        padding: 14px 30px;
+        margin: 14px 0px;
+    }
+    
+    .blog h2{
+        font-size: 25px;
+    }
+    .blog h3{
+        font-size: 17px;
+    }
+    .comment h4{
+        font-size: 16px;
+    }
+}
+@media (min-width:901px) and (max-width:1200px) {
+
+    .container{
+        max-width: 	870px;
+        margin: 0 auto;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .padding_bottem{
+        padding-bottom: 40px;
+    }
+    .section1 .bg_img{
+        background-image: url("img/plan.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    .layer{
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .section1 h1{
+        font-size: 40px;
+        text-align: center;
+        padding:200px ;
+        color: whitesmoke;
+        letter-spacing: 18px;
+    }
+    .section2{
+        text-align: center;
+    }
+    .section2 h2{
+        font-size: 35px;
+        display: inline-block;
+        border-bottom: 3px solid gold;
+        border-top: 3px solid gold;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding:10px;
+        margin-bottom: 45px;
+    }
+    .section2 .circle{
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        border: 5px solid black;
+    }
+    .d_flex{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .section2 h4{
+        text-align: center;
+        font-size: 23px;
+        padding-top: 18px;
+    }
+    
+    .section2 h3{
+        text-align: center;
+        font-size: 23px;
+        color: gold;
+        line-height: 125px;
+    }
+    .section3 .brand h1{
+        font-size: 30px;
+        color: gold;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .w_50{
+        width: 50%;
+    }
+    .details1{
+        background-image: url("img/delta.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details1 p,.details2 p,.details3 p,.details4 p,.details5 p,.details6 p{
+        color: whitesmoke;
+        text-align: center;
+        font-size: 18px;
+        padding: 5px;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    .pad{
+        background-color: rgba(0, 0, 0, 0);
+        padding: 60px;
+        transition: all 0.5s;
+    }
+    .right{
+        text-align: right;
+    }
+    .brand_name h6{
+        font-size: 35px;
+        text-transform: capitalize;
+    }
+    .details1:hover .pad,.details2:hover .pad,.details3:hover .pad,.details4:hover .pad,.details5:hover .pad,.details6:hover .pad{
+        background-color: rgba(0, 0, 0, 0.423);
+    }
+    .details1:hover p,.details2:hover p,.details3:hover p,.details4:hover p,.details5:hover p,.details6:hover p{
+        opacity: 1;
+    }
+    .padding1{
+        padding-bottom: 45px;
+    }
+    .details2{
+        background-image: url("img/American_airline.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details3{
+        background-image: url("img/United_Airlines.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details4{
+        background-image: url("img/Emirates.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details5{
+        background-image: url("img/Southwest_Airlines.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details6{
+        background-image: url("img/China_Southern.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .section4{
+        text-align: center;
+        margin: 0 auto;
+    }
+    .section4 h1{
+        color: gold;
+        font-size: 40px;
+        padding: 16px;
+        text-align: center;
+    }
+    video{
+        max-width:860px;
+        height: auto;
+        border-radius: 25px;
+        border: 2px solid black;
+    }
+    .section5 h1{
+        text-align: center;
+        color: gold;
+        padding: 40px;
+        font-size: 35px;
+    }
+    .blog{
+        border: 5px solid black;
+        padding: 18px;
+        margin: 18px;
+    }
+    .comment{
+        width: 100%;
+        background-color: #3c6897;
+        color: whitesmoke;
+        padding: 18px 40px;
+        margin: 18px 0px;
+    }
+    
+    .blog h2{
+        font-size: 27px;
+    }
+    .blog h3{
+        font-size: 19px;
+    }
+    .comment h4{
+        font-size: 18px;
+    }
+}
+@media (min-width:1201px) {
+    
+    .container{
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .padding_bottem{
+        padding-bottom: 50px;
+    }
+    .section1 .bg_img{
+        background-image: url("img/plan.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    .layer{
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+    .section1 h1{
+        font-size: 50px;
+        text-align: center;
+        padding:300px ;
+        color: whitesmoke;
+        letter-spacing: 20px;
+    }
+    .section2{
+        text-align: center;
+    }
+    .section2 h2{
+        font-size: 40px;
+        display: inline-block;
+        border-bottom: 3px solid gold;
+        border-top: 3px solid gold;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        padding:10px;
+        margin-bottom: 50px;
+    }
+    .section2 .circle{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid black;
+    }
+    .d_flex{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .section2 h4{
+        text-align: center;
+        font-size: 25px;
+        padding-top: 20px;
+    }
+    
+    .section2 h3{
+        text-align: center;
+        font-size: 25px;
+        color: gold;
+        line-height: 140px;
+    }
+    .section3 .brand h1{
+        font-size: 35px;
+        color: gold;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    .w_50{
+        width: 50%;
+    }
+    .details1{
+        background-image: url("img/delta.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details1 p,.details2 p,.details3 p,.details4 p,.details5 p,.details6 p{
+        color: whitesmoke;
+        text-align: center;
+        font-size: 20px;
+        padding: 5px;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    .pad{
+        background-color: rgba(0, 0, 0, 0);
+        padding: 70px;
+        transition: all 0.5s;
+    }
+    .right{
+        text-align: right;
+    }
+    .brand_name h6{
+        font-size: 40px;
+        text-transform: capitalize;
+    }
+    .details1:hover .pad,.details2:hover .pad,.details3:hover .pad,.details4:hover .pad,.details5:hover .pad,.details6:hover .pad{
+        background-color: rgba(0, 0, 0, 0.423);
+    }
+    .details1:hover p,.details2:hover p,.details3:hover p,.details4:hover p,.details5:hover p,.details6:hover p{
+        opacity: 1;
+    }
+    .padding1{
+        padding-bottom: 50px;
+    }
+    .details2{
+        background-image: url("img/American_airline.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .details3{
+        background-image: url("img/United_Airlines.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details4{
+        background-image: url("img/Emirates.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details5{
+        background-image: url("img/Southwest_Airlines.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .details6{
+        background-image: url("img/China_Southern.jpeg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .section4{
+        text-align: center;
+        margin: 0 auto;
+    }
+    .section4 h1{
+        color: gold;
+        font-size: 50px;
+        padding: 20px;
+        text-align: center;
+    }
+    video{
+        max-width:1150px;
+        height: auto;
+        border-radius: 25px;
+        border: 2px solid black;
+    }
+    .section5 h1{
+        text-align: center;
+        color: gold;
+        font-size: 50px;
+        padding: 50px;
+    }
+    .blog{
+        border: 5px solid black;
+        padding: 20px;
+        margin: 20px;
+    }
+    .comment{
+        width: 100%;
+        background-color: #3c6897;
+        color: whitesmoke;
+        padding: 20px 50px;
+        margin: 20px 0px;
+    }
+    
+    .blog h2{
+        font-size: 30px;
+    }
+    .blog h3{
+        font-size: 20px;
+    }
+    .comment h4{
+        font-size: 19px;
+    }
+}
+    
