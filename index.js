@@ -35,6 +35,8 @@ const userloginController = require('./controllers/userlogin')
 const myaccountController = require('./controllers/myaccount')
 const adminauthController = require('./controllers/adminauth')
 const logoutController = require('./controllers/logout')
+const seatController = require('./controllers/seatselection')
+const chcekoutController = require('./controllers/checkout')
 // const schduleController = require('./controllers/showallflights')
 
 
@@ -71,14 +73,69 @@ app.get('/userlogin', userloginController)
 app.get('/myaccount', myaccountController)
 app.get('/adminauth', adminauthController)
 app.get('/logout', logoutController)
+app.get('/seatselection',seatController)
+app.get('/checkout', chcekoutController)
 
 // app.get('/loginsignup', (req,res)=>{
 //     res.render('login_signup')
 // })
 
 app.get('/pet', petController)
+
+// // Assume you have a function to get flights from a database
+// const getFlights = async (filters) => {
+//     // Your logic to fetch flights from the database with applied filters
+//     // This is a placeholder implementation
+//     let allFlights = await allFlights.find(filters);
+//     return allFlights;
+// };
+
+// app.get('/allFlights', async (req, res) => {
+//     let filters = {};
+
+//     if (req.query.origin) {
+//         filters.origin = req.query.origin;
+//     }
+//     if (req.query.destination) {
+//         filters.destination = req.query.destination;
+//     }
+//     if (req.query.departureDate) {
+//         filters.departureDate = { $gte: new Date(req.query.departureDate) };
+//     }
+//     if (req.query.price) {
+//         filters.price = { $lte: req.query.price };
+//     }
+
+//     try {
+//         let flights = await getFlights(filters);
+//         res.render('allFlights', { flights });
+//     } catch (error) {
+//         res.status(500).send(error.message);
+//     }
+// });
+
+// app.get('/allFlights', (req, res) => {
+//     Flights.find()
+//         .then(flights => {
+//             res.render('allFlights', { flights });
+//         })
+//         .catch(err => {
+//             console.error('Error fetching flights:', err);
+//             res.status(500).send('Internal Server Error');
+//         });
+// });
+
 app.get('/allFlights', (req, res) => {
-    Flights.find()
+    const { origin, destination, price, date } = req.query;
+    
+    let filter = {};
+    
+    if (origin) filter.origin = origin;
+    if (destination) filter.destination = destination;
+    if (price) filter.price = { $lte: price };
+    if (date) filter.departureDate = { $gte: new Date(date) };
+
+    Flights.find(filter)
         .then(flights => {
             res.render('allFlights', { flights });
         })
@@ -87,4 +144,3 @@ app.get('/allFlights', (req, res) => {
             res.status(500).send('Internal Server Error');
         });
 });
-

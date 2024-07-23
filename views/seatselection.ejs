@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layouts/header'); -%>
+    <link href="/css/seat-selection.css" type="text/css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Seat Selection</title>
+    <style>
+        /* seat-selection.css */
+
+.seat-legend {
+    margin-bottom: 20px;
+}
+
+.seat-legend div {
+    margin-bottom: 10px;
+}
+
+.seat {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.available {
+    background-color: #28a745;
+}
+
+.selected {
+    background-color: #ffc107;
+}
+
+.occupied {
+    background-color: #dc3545;
+    cursor: not-allowed;
+}
+
+.seat-row {
+    margin-bottom: 10px;
+}
+
+.seating-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    </style>
+</head>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-success text-white text-center">
+                <h2>Seat Selection</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="seat-legend">
+                            <div><span class="seat available"></span> Available</div>
+                            <div><span class="seat selected"></span> Selected</div>
+                            <div><span class="seat occupied"></span> Occupied</div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="seating-chart">
+                            <% for (let row = 1; row <= 10; row++) { %>
+                                <div class="seat-row">
+                                    <% for (let col = 1; col <= 6; col++) { %>
+                                        <div class="seat available" data-seat="<%= row %><%= String.fromCharCode(64 + col) %>">
+                                            <%= row %><%= String.fromCharCode(64 + col) %>
+                                        </div>
+                                    <% } %>
+                                </div>
+                            <% } %>
+                        </div>
+                        <button id="confirm-selection" class="btn btn-primary mt-3">Confirm Selection</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/scripts'); -%>
+    <script>
+        // seat-selection.js
+
+$(document).ready(function() {
+    $('.seat').on('click', function() {
+        if (!$(this).hasClass('occupied')) {
+            $(this).toggleClass('selected');
+        }
+    });
+
+    $('#confirm-selection').on('click', function() {
+        let selectedSeats = [];
+        $('.seat.selected').each(function() {
+            selectedSeats.push($(this).data('seat'));
+        });
+        alert('Selected seats: ' + selectedSeats.join(', '));
+        // Add code here to send the selected seats to the server
+    });
+});
+
+    </script>
+</body>
+</html>

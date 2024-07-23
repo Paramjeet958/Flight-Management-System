@@ -4,43 +4,98 @@
 <head>
     <link href="/css/allflights.css" type="text/css" rel="stylesheet"> 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> 
-    
+    <STYLE>
+        .table-responsive {
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.table th, .table td {
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+    </STYLE>
 </head>
 <body>
     <%- include('layouts/navbar'); -%>
-    <div class="container mt-5">
-        <div class="card-header bg-success text-white text-center">
-            <h2>All Flights</h2>
-        </div><br>
-        <div class="table-container">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Flight Number</th>
-                        <th>Flight Name</th>
-                        <th>Origin</th>
-                        <th>Destination</th>
-                        <th>Duration (minutes)</th>
-                        <th>Departure Date</th>
-                        <th>Arrival Date</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% flights.forEach(flight => { %>
-                        <tr>
-                            <td><%= flight.flightNumber %></td>
-                            <td><%= flight.flightName %></td>
-                            <td><%= flight.origin %></td>
-                            <td><%= flight.destination %></td>
-                            <td><%= flight.duration %></td>
-                            <td><%= new Date(flight.departureDate).toLocaleString() %></td>
-                            <td><%= new Date(flight.arrivalDate).toLocaleString() %></td>
-                            <td><%= flight.status %></td>
-                        </tr>
-                    <% }) %>
-                </tbody>
-            </table>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <!-- Filter Sidebar -->
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4>Filter Flights</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="filter-form">
+                            <div class="form-group">
+                                <label for="origin">Origin</label>
+                                <input type="text" class="form-control" name="origin" id="origin" placeholder="Origin">
+                            </div>
+                            <div class="form-group">
+                                <label for="destination">Destination</label>
+                                <input type="text" class="form-control" name="destination" id="destination" placeholder="Destination">
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Max Price</label>
+                                <input type="number" class="form-control" name="price" id="price" placeholder="Max Price">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Departure Date</label>
+                                <input type="date" class="form-control" name="date" id="date">
+                            </div>
+                            <button type="submit" class="btn btn-success">Filter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Flight Results -->
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header bg-success text-white text-center">
+                        <h2>All Flights</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Flight Number</th>
+                                        <th>Flight Name</th>
+                                        <th>Origin</th>
+                                        <th>Destination</th>
+                                        <th>Duration (minutes)</th>
+                                        <th>Departure Date</th>
+                                        <th>Arrival Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% flights.forEach(flight => { %>
+                                        <tr>
+                                            <td><%= flight.flightNumber %></td>
+                                            <td><%= flight.flightName %></td>
+                                            <td><%= flight.origin %></td>
+                                            <td><%= flight.destination %></td>
+                                            <td><%= flight.duration %></td>
+                                            <td><%= new Date(flight.departureDate).toLocaleString() %></td>
+                                            <td><%= new Date(flight.arrivalDate).toLocaleString() %></td>
+                                            <td><%= flight.status %></td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -49,5 +104,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <%- include('layouts/footer'); -%>
     <%- include('layouts/scripts'); -%>
+    <script>
+        document.getElementById('filter-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const origin = document.querySelector('input[name="origin"]').value;
+            const destination = document.querySelector('input[name="destination"]').value;
+            const price = document.querySelector('input[name="price"]').value;
+            const date = document.querySelector('input[name="date"]').value;
+            
+            let queryString = '?';
+            if (origin) queryString += `origin=${origin}&`;
+            if (destination) queryString += `destination=${destination}&`;
+            if (price) queryString += `price=${price}&`;
+            if (date) queryString += `date=${date}&`;
+            
+            window.location.href = '/allFlights' + queryString.slice(0, -1);
+        });
+    </script>
 </body>
 </html>
