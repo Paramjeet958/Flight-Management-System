@@ -67,19 +67,24 @@
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead>
-                                    <tr>
-                                        <th>Flight Number</th>
-                                        <th>Flight Name</th>
-                                        <th>Origin</th>
-                                        <th>Destination</th>
-                                        <th>Duration (minutes)</th>
-                                        <th>Departure Date</th>
-                                        <th>Arrival Date</th>
-                                        <th>Status</th>
-                                    </tr>
+                                    
+                                        <tr>
+                                            <th>Flight Number</th>
+                                            <th>Flight Name</th>
+                                            <th>Origin</th>
+                                            <th>Destination</th>
+                                            <th>Duration (minutes)</th>
+                                            <th>Departure Date</th>
+                                            <th>Arrival Date</th>
+                                            <th>Status</th>
+                                            <th>Detail</th>
+                                        </tr>
+                                    
+                                   
                                 </thead>
                                 <tbody>
                                     <% flights.forEach(flight => { %>
+                                        
                                         <tr>
                                             <td><%= flight.flightNumber %></td>
                                             <td><%= flight.flightName %></td>
@@ -89,7 +94,18 @@
                                             <td><%= new Date(flight.departureDate).toLocaleString() %></td>
                                             <td><%= new Date(flight.arrivalDate).toLocaleString() %></td>
                                             <td><%= flight.status %></td>
+                                            <td><a href="/seatselection?<%= new URLSearchParams({
+                                                flightNumber: flight.flightNumber,
+                                                flightName: flight.flightName,
+                                                origin: flight.origin,
+                                                destination: flight.destination,
+                                                duration: flight.duration,
+                                                departureDate: flight.departureDate.toISOString(),
+                                                arrivalDate: flight.arrivalDate.toISOString(),
+                                                status: flight.status
+                                            }).toString() %>">See Details</a></td>
                                         </tr>
+                                    
                                     <% }) %>
                                 </tbody>
                             </table>

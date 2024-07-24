@@ -150,7 +150,7 @@ app.get('/allFlights', (req, res) => {
 app.post('/updateProfile', updateProfileController)
 app.get('/blog', blogController)
 app.get('/pet', petController)
-app.get('/allFlights', allFlightsController);
+// app.get('/allFlights', allFlightsController);
 app.get('/updateUserPage', updateUserPageController)
 app.use((req, res) => res.render('notFound'));
 
