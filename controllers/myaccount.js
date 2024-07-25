@@ -35,6 +35,7 @@ module.exports = (req, res) => {
                             dateOfBirth=user.dateOfBirth,
                             passportNumber=user.passportNumber 
                         res.render('myaccount',{
+                            errors: req.flash('validationErrors'),
                             userName: username,
                             email:email,
                             fname : fname,

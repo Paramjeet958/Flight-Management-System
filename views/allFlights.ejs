@@ -21,6 +21,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+tbody tr:hover {
+            font-weight: bold;
+            background-color: #bcbbbb; /* Light grey background on hover */
+        }
 
     </STYLE>
 </head>
@@ -114,52 +118,7 @@
                 </div>
             </div>
 
-    <style>
-      
-        tbody tr:hover {
-            font-weight: bold;
-            background-color: #bcbbbb; /* Light grey background on hover */
-        }
-    </style>
-</head>
-<body>
-    <%- include('layouts/navbar'); -%>
-    <div class="container mt-5">
-        <div class="card-header bg-success text-white text-center">
-            <h2>All Flights</h2>
-        </div><br>
-        <div class="table-container">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Flight Number</th>
-                        <th>Flight Name</th>
-                        <th>Origin</th>
-                        <th>Destination</th>
-                        <th>Duration (minutes)</th>
-                        <th>Departure Date</th>
-                        <th>Arrival Date</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% flights.forEach(flight => { %>
-                        <tr >
-                            <td><%= flight.flightNumber %></td>
-                            <td><%= flight.flightName %></td>
-                            <td><%= flight.origin %></td>
-                            <td><%= flight.destination %></td>
-                            <td><%= flight.duration %></td>
-                            <td><%= new Date(flight.departureDate).toLocaleString() %></td>
-                            <td><%= new Date(flight.arrivalDate).toLocaleString() %></td>
-                            <td><%= flight.status %></td>
-                        </tr>
-                    <% }) %>
-                </tbody>
-            </table>
-
-        </div>
-    </div>
+ 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

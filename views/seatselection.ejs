@@ -95,7 +95,7 @@
                                 </div>
                             <% } %>
                         </div>
-                        <a href="/checkout" id="confirm-selection" class="btn btn-primary mt-3">Confirm Selection</a>
+                        <button id="confirm-selection" class="btn btn-primary mt-3">Confirm Selection</button>
                     </div>
                 </div>
             </div>
@@ -120,8 +120,27 @@
                 $('.seat.selected').each(function() {
                     selectedSeats.push($(this).data('seat'));
                 });
-                alert('Selected seats: ' + selectedSeats.join(', '));
-                // Add code here to send the selected seats to the server
+
+                if (selectedSeats.length === 0) {
+                    alert('Please select at least one seat.');
+                    return;
+                }
+
+                // Construct the checkout URL with selected seats
+                const checkoutUrl = `/checkout?${$.param({
+                    flightNumber: '<%= flight.flightNumber %>',
+                    flightName: '<%= flight.flightName %>',
+                    origin: '<%= flight.origin %>',
+                    destination: '<%= flight.destination %>',
+                    duration: '<%= flight.duration %>',
+                    departureDate: '<%= flight.departureDate.toISOString() %>',
+                    arrivalDate: '<%= flight.arrivalDate.toISOString() %>',
+                    status: '<%= flight.status %>',
+                    seatNumber: selectedSeats.join(',')
+                })}`;
+
+                // Redirect to the checkout page
+                window.location.href = checkoutUrl;
             });
         });
     </script>

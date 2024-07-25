@@ -44,6 +44,7 @@ const redirectIfAutheticatedMiddleware = require('./views/middleWare/redirectAut
 const authMiddleware=require('./views/middleWare/authMiddleWare')
 const allFlightsController = require('./controllers/allFlights.js')
 const updateUserPageController = require('./controllers/updateUserPage.js')
+const bookController= require('./controllers/book.js')
 global.loggedIn = null;
 global.uType = "";
 app.use(flash());
@@ -77,6 +78,7 @@ app.get('/myaccount',authMiddleware, myaccountController)
 app.get('/logout', logoutController)
 app.get('/seatselection',seatController)
 app.get('/checkout', chcekoutController)
+app.post('/book',bookController)
 
 // app.get('/loginsignup', (req,res)=>{
 //     res.render('login_signup')
