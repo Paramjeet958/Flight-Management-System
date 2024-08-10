@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+    <body>
+        <!-- Navigation-->
+            <%- include('layouts/navbar'); -%>
+          
+        <!-- Main Content-->
+
+        <main class="mb-4">
+            <div class="my-5">
+                <div class="card" style="margin-left:auto; margin-right:auto;" class="col-lg-8 col-md-10 col-md-12">
+                    <div class="card-body">
+                        <div class="card-header bg-success text-white text-center custom-header">
+                            <h2>Update Your Booking</h2>
+                        </div><br>
+                        <form action="/updateAdminBooking" id="update" method="POST" data-sb-form-api-token="API_TOKEN">
+                           
+                            <div class="form-group">
+                                <label for="bookingId">Booking Id</label>
+                                <input type="text" class="form-control" id="booking_id" name="booking_id" value="<%= booking.booking_id%>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="flightNumber">Flight Number</label>
+                                <input type="text" class="form-control" id="flightNumber" name="flightNumber" value="<%= booking.flightNumber %>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="flightName">Flight Name</label>
+                                <input type="text" class="form-control" id="flightName" name="flightName" value="<%= booking.flightName %>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="seat">Selected Seat</label>
+                                <input type="text" class="form-control" id="seatNumber" name="seatNumber" value="<%= booking.seatNumber %>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Departure Date</label>
+                                <input type="text" class="form-control" id="departureDate" name="departureDate" value="<%= booking.departureDate %>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="arrivalDate">Arrival:</label>
+                                <input type="text" class="form-control" id="arrivalDate" name="arrivalDate" value="<%= booking.arrivalDate %>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Price:</label>
+                                <input type="text" class="form-control" id="price" name="price" value="<%= booking.price %>" >
+                            </div>
+                            <div class="form-group">
+                                <label for="full-name">Full Name</label>
+                                <input type="text" class="form-control" id="full-name" name="fullName" value="<%= booking.fullName %>" readonly >
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" value="<%= booking.email %>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" value="<%= booking.phone %>" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" class="form-control" id="address" name="address" value="<%= booking.address %>" readonly >
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Status</label>
+                                <input type="text" class="form-control" id="status" name="status" value="<%= booking.status %>" >
+                            </div>
+                            
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-success" id="sendMessageButton">UPDATE</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer-->
+        <%- include('layouts/footer'); -%>
+        <%- include('layouts/scripts'); -%>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,61 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
     <%- include('layouts/header'); -%>
-    <body style="background-color: #f8f9fa;">
-        <!-- Navigation-->
-        <%- include('layouts/navbar'); -%>
-
-        <!-- Main Content-->
-        <main class="mb-4">
-            <div class="container my-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-md-10">
-                        <!-- User Information Card -->
-                        <div class="card shadow-sm mb-4">
-                            <div class="card-header bg-success text-white text-center">
-                                <h2>My Account</h2>
-                            </div>
-                            <div class="col-lg-8 col-md-10 mx-auto">
-                                <% if(errors != null && errors.length > 0){ %>
-                                <ul class="list-group"></ul>
-                                <% for (var i = 0; i < errors.length; i++) { %>
-                                <li class="list-group-item list-group-item-danger"><%=
-                                errors[i] %></li>
-                                <% } %>
-                                </ul>
-                                <% } %>
-                            </div>
-                            <div class="card-body">
-                                <h3>User Information</h3>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item"><strong>Username:</strong> <%= userName %></li>
-                                    <li class="list-group-item"><strong>First Name:</strong> <%= fname %></li>
-                                    <li class="list-group-item"><strong>Last Name:</strong> <%= lname %></li>
-                                    <li class="list-group-item"><strong>Email:</strong> <%= email %></li>
-                                    <li class="list-group-item"><strong>Phone Number:</strong> <%= phone %></li>
-                                    <li class="list-group-item"><strong>Street:</strong> <%= street %></li>
-                                    <li class="list-group-item"><strong>City:</strong> <%= city %></li>
-                                    <li class="list-group-item"><strong>State:</strong> <%= state %></li>
-                                    <li class="list-group-item"><strong>Zip:</strong> <%= zip %></li>
-                                    <li class="list-group-item"><strong>Country:</strong> <%= country %></li>
-                                    <li class="list-group-item"><strong>Date Of Birth:</strong> <%= dateOfBirth %></li>
-                                    <li class="list-group-item"><strong>Passport Number:</strong> <%= passportNumber %></li>
-                                </ul>
-                                <div class="text-center mt-4">
-                                    <a href="/updateUserPage" class="btn btn-primary">Update Information</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- User Bookings Card -->
-                  
-                    </div>
-                </div>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>My Account</title>
+</head>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-success text-white text-center">
+                <h2>My Account</h2>
             </div>
-        </main>
+           
+            <div class="card-body">
+                <h3>User Information</h3>
+                <ul class="list-group mb-4">
+                    <li class="list-group-item"><strong>Username:</strong> <%= user.userName %></li>
+                    <li class="list-group-item"><strong>Email:</strong> <%= user.email %></li>
+                    <li class="list-group-item"><strong>First Name:</strong> <%= user.fname %></li>
+                    <li class="list-group-item"><strong>Last Name:</strong> <%= user.lname %></li>
+                    <li class="list-group-item"><strong>Phone:</strong> <%= user.phone %></li>
+                    <li class="list-group-item"><strong>Street:</strong> <%= user.street %></li>
+                    <li class="list-group-item"><strong>City:</strong> <%= user.city %></li>
+                    <li class="list-group-item"><strong>State:</strong> <%= user.state %></li>
+                    <li class="list-group-item"><strong>Zip:</strong> <%= user.zip %></li>
+                    <li class="list-group-item"><strong>Country:</strong> <%= user.country %></li>
+                    <li class="list-group-item"><strong>Date of Birth:</strong> <%= user.dateOfBirth %></li>
+                    <li class="list-group-item"><strong>Passport Number:</strong> <%= user.passportNumber %></li>
+                </ul>
+                <a href="/updateUserPage" class="btn btn-warning">UPDATE PROFILE</a>
+                <br><br>
+                <h3>Your Bookings</h3>
+                <% if (bookings && bookings.length>0) { %> 
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Booking ID</th>
+                                    <th>Flight Number</th>
+                                    <th>Flight Name</th>
+                                    <th>Departure</th>
+                                    <th>Arrival</th>
+                                    <th>Seat Number</th>
+                                    <th>Status</th>
+                                    <th>Update</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% bookings.forEach(booking => { %>
+                                    <tr>
+                                        <td><%= booking._id %></td>
+                                        <td><%= booking.flightNumber %></td>
+                                        <td><%= booking.flightName %></td>
+                                        <td><%= new Date(booking.departureDate).toLocaleString() %></td>
+                                        <td><%= new Date(booking.arrivalDate).toLocaleString() %></td>
+                                        <td><%= booking.seatNumber %></td>
+                                        <td><%= booking.status %></td>
+                                        <td><a href="/updateUserBookingPage?<%= new URLSearchParams({
+                                            booking_id: booking._id,
+                                            flightNumber: booking.flightNumber,
+                                            flightName: booking.flightName,
+                                            seatNumber: booking.seatNumber,
+                                            departureDate: booking.departureDate.toISOString(),
+                                            arrivalDate: booking.arrivalDate.toISOString(),
+                                            status: booking.status,
+                                            price:booking.price,
+                                            fullName: booking.fullName,
+                                            email: booking.email,
+                                            phone: booking.phone,
+                                            address: booking.address
 
-        <!-- Footer-->
-        <%- include('layouts/footer'); -%>
-        <%- include('layouts/scripts'); -%>
-    </body>
+                                        }).toString() %>">Update</a></td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                <% } else { %>
+                    <p>No bookings found.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/scripts'); -%>
+</body>
 </html>

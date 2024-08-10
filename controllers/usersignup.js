@@ -17,11 +17,11 @@ module.exports = async (req, res) => {
         res.redirect('/login');
         }
         else{
-            const validationErrors = "";
+            const validationErrors = "Your both passwords do not match";
             req.flash('validationErrors', validationErrors);
             req.flash('data', req.body);
             console.log(error);
-            return res.redirect('/signup');
+            res.redirect('/signup');
         }
     } catch (error) {
         if (error.name === 'ValidationError') {
@@ -29,12 +29,8 @@ module.exports = async (req, res) => {
             req.flash('validationErrors', validationErrors);
             req.flash('data', req.body);
             console.log(error);
-            return res.redirect('/signup');
-        } else {
-            // Handle other types of errors (e.g., database connection issues)
-            console.error('Internal Server Error:', error);
-            return res.status(500).send('Internal Server Error');
-        }
+            res.redirect('/signup');
+        } 
     }
 };
 

@@ -4,9 +4,8 @@ var uniqueValidator = require('mongoose-unique-validator');
 const bcrypt = require('bcrypt')
 const BookingSchema = new Schema({
     userName: {
-        type: String
-        
-        
+        type: String,
+        require:true
         },
     flightNumber:{
         type: String,
@@ -22,7 +21,6 @@ const BookingSchema = new Schema({
     email: {
         type: String,
         required:[true,'Please provide Email'],
-        unique: true,
         trim: true,
         lowercase: true,
         match: [/.+@.+\..+/, 'Please enter a valid email address']
@@ -52,7 +50,8 @@ const BookingSchema = new Schema({
       updatedAt: {
         type: Date,
         default: Date.now
-      }
+      },
+      status:{type:String, default: "Scheduled"}
 }, {
     timestamps: true
 }

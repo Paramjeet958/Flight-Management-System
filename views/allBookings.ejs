@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header'); -%>
+<head>
+    <link href="/css/allflights.css" type="text/css" rel="stylesheet"> 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> 
+
+<style>
+    .list-group-item {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+</style>
+</head>
+<body>
+    <%- include('layouts/navbar'); -%>
+   
+    <div class="container mt-5">
+        <h1 class="mb-4">All Bookings</h1>
+        <div class="list-group">
+            <% bookings.forEach((booking) => { %>
+                <a href="/updateAdminBookingPage?<%= new URLSearchParams({
+                    booking_id: booking._id,
+                    flightNumber: booking.flightNumber,
+                    flightName: booking.flightName,
+                    seatNumber: booking.seatNumber,
+                    departureDate: booking.departureDate.toISOString(),
+                    arrivalDate: booking.arrivalDate.toISOString(),
+                    status: booking.status,
+                    price:booking.price,
+                    fullName: booking.fullName,
+                    email: booking.email,
+                    phone: booking.phone,
+                    address: booking.address,
+             
+
+                }).toString() %>" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Booking by: <%= booking.fullName %></h5>
+                        <small class="text-muted"><%= new Date(booking.departureDate).toLocaleDateString() %> - <%= new Date(booking.arrivalDate).toLocaleDateString() %></small>
+                    </div>
+                    <p class="mb-1"><strong>Booking Id:</strong> <%= booking._id %></p>
+                    <p class="mb-1"><strong>Flight Number:</strong> <%= booking.flightNumber %></p>
+                    <p class="mb-1"><strong>Flight Name:</strong> <%= booking.flightName %></p>
+                    <p class="mb-1"><strong>Seat Number:</strong> <%= booking.seatNumber %></p>
+                    <p class="mb-1"><strong>Price:</strong> $<%= booking.price %></p>
+                    <p class="mb-1"><strong>Email:</strong> <%= booking.email %></p>
+                    <small class="text-muted"><strong>Status:</strong> <%= booking.status %></small>
+                    
+                    </a>
+                   
+            <% }) %>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/scripts'); -%>
+  
+</body>
+</html>

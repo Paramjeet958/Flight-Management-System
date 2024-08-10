@@ -1,36 +1,38 @@
+const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId;
+const Bookings = require('../models/Bookings');
+const { sendMail } = require('../services/emailService');
 
-const User = require('../models/Users.js')
-const path = require('path')
-const {sendMail} =require('../services/emailService')
-module.exports=async(req,res)=>{
-   
-    if(loggedIn){
-        const user = await User.findOne({ userName: req.session.userName });
-    await User.updateOne({
-        userName: req.session.userName
-    },{
-        $set: {
-                "fname":req.body.fname,
-                "lname":req.body.lname,
-                "email":req.body.email,
-                "phone":req.body.phone,
-                "street":req.body.street,
-                "city": req.body.city,
-                "state": req.body.state,
-                "zip": req.body.zip,
-                "country": req.body.country,
-                "dateOfBirth": req.body.dateOfBirth,
-                "passportNumber": req.body.passportNumber
+module.exports = async (req, res) => {
+    
+        try {
+            const booking = await Bookings.findOne({ _id: new ObjectId(req.body.booking_id) });
+            if (!booking) {
+                console.log("Booking not found");
+                return res.redirect('/myaccount');
+            }
+
+            await Bookings.updateOne({
+                _id: new ObjectId(req.body.booking_id)
+            }, {
+                $set: {
+                    "flightNumber": req.body.flightNumber,
+                    "flightName": req.body.flightName,
+                    "seatNumber": req.body.seatNumber,
+                    "departureDate": req.body.departureDate,
+                    "arrivalDate": req.body.arrivalDate,
+                    "price": req.body.price,
+                    "fullName": req.body.fullName,
+                    "phone": req.body.phone,
+                    "address": req.body.address
+                }
+            });
+
+            console.log("Booking updated successfully");
+            res.redirect('/myaccount');
+        } catch (err) {
+            console.error("Error updating booking:", err);
+            res.redirect('/myaccount');
         }
-})
-
-res.redirect('/myaccount')
-// await sendMail(user.email, 'Updated', 'Your account has been successfully updated!', '<h1>Your account has been successfully updated!</h1>');
-
-    }else{
-        const validationError="Something wrong!!";
-                            req.flash("validationError",validationError)
-                            res.redirect('/myaccount')
-    }
-
-}
+  
+};

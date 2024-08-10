@@ -136,7 +136,8 @@
                     departureDate: '<%= flight.departureDate.toISOString() %>',
                     arrivalDate: '<%= flight.arrivalDate.toISOString() %>',
                     status: '<%= flight.status %>',
-                    seatNumber: selectedSeats.join(',')
+                    seatNumber: selectedSeats.join(','),
+                    price: (selectedSeats.length-1) * 799
                 })}`;
 
                 // Redirect to the checkout page

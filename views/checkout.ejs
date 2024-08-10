@@ -28,11 +28,22 @@
 </head>
 <body>
     <%- include('layouts/navbar'); -%>
+   
     <div class="container mt-5">
+        <div class="col-lg-8 col-md-10">
+            <% if(errors){ %>
+            <ul class="list-group">
+                <% for (var i = 0; i < errors.length; i++) { %>
+                <li class="list-group-item list-group-item-danger"><%= errors[i] %></li>
+                <% } %>
+            </ul>
+            <% } %>
+        </div>
         <div class="card">
             <div class="card-header bg-success text-white text-center">
                 <h2>Flight Checkout</h2>
             </div>
+          
             <div class="card-body">
                 <!-- Flight Summary -->
                 <div class="flight-summary">
@@ -45,11 +56,11 @@
                     <form  action="/book" id="checkout-form" method="POST" data-sb-form-api-token="API_TOKEN">
                         <div class="form-group">
                             
-                            <input type="text" class="form-control" id="userName" name="userName" value="<%= userName %> " hidden>
+                            <input type="text" class="form-control" id="userName" name="userName" value="<%= userName %>" hidden>
                         </div>
                         <div class="form-group">
                             <label for="flightNumber">Flight Number</label>
-                            <input type="text" class="form-control" id="flightNumber" name="flightNumber" value="<%= flight.flightNumber %> " readonly>
+                            <input type="text" class="form-control" id="flightNumber" name="flightNumber" value="<%= flight.flightNumber %>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="flightName">Flight Name</label>
@@ -73,30 +84,30 @@
                         </div>
                         <div class="form-group">
                             <label for="full-name">Full Name</label>
-                            <input type="text" class="form-control" id="full-name" name="fullName" required>
+                            <input type="text" class="form-control" id="full-name" name="fullName" value="<%= flight.fullName %>" readonly>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" value="<%= flight.email %>" >
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" required>
+                            <input type="tel" class="form-control" id="phone" name="phone" value="<%= flight.phone %>" >
                         </div>
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" name="address" required>
+                            <input type="text" class="form-control" id="address" name="address" value="<%= flight.address %>" >
                         </div>
                         
                         <!-- Payment Details -->
                         <div class="form-group">
                             <label for="payment-method">Payment Method</label>
-                            <select class="form-control" id="payment-method" name="paymentMethod" required>
-                                <option value="credit-card">Credit Card</option>
+                            <select class="form-control" id="payment-method" name="paymentMethod" aria-readonly="true">
+                                <option value="credit-card">Credit/Debit Card</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="card-number" class="d-block">Credit Card Details</label>
+                            <label for="card-number" class="d-block"> Card Details</label>
                             <input type="text" class="form-control mb-2" id="card-number" name="cardNumber" placeholder="Card Number" >
                             <input type="text" class="form-control mb-2" id="card-expiry" name="card-expiry" placeholder="MM/YY" required>
                             <input type="text" class="form-control" id="card-cvc" name="card-cvc" placeholder="CVC" required>
@@ -127,17 +138,17 @@ $(document).ready(function() {
     // `);
 
     $('#checkout-form').on('submit', function(event) {
-        event.preventDefault();
+        // event.preventDefault();
 
-        // Collect form data
-        const fullName = $('#full-name').val();
-        const email = $('#email').val();
-        const phone = $('#phone').val();
-        const address = $('#address').val();
-        const paymentMethod = $('#payment-method').val();
-        const cardNumber = $('#card-number').val();
-        const cardExpiry = $('#card-expiry').val();
-        const cardCvc = $('#card-cvc').val();
+        // // Collect form data
+        // const fullName = $('#full-name').val();
+        // const email = $('#email').val();
+        // const phone = $('#phone').val();
+        // const address = $('#address').val();
+        // const paymentMethod = $('#payment-method').val();
+        // const cardNumber = $('#card-number').val();
+        // const cardExpiry = $('#card-expiry').val();
+        // const cardCvc = $('#card-cvc').val();
 
         // For now, just log the collected data
         console.log({

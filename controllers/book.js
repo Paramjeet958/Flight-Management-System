@@ -1,11 +1,11 @@
-const Bookings = require('../models/Flights.js');
+const Bookings = require('../models/Bookings.js');
 
 const path = require('path')
 
 module.exports= async (req,res)=>{
     
     try{
-        const Bookings = await Bookings.create(req.body);
+        const Booking = await Bookings.create(req.body);
         res.redirect('/myaccount');
     }
      catch (error) {

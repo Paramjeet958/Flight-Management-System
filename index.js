@@ -1,5 +1,5 @@
 const Flights = require('./models/Flights');
-
+const Bookings = require('./models/Bookings.js')
 const express=require('express')
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
@@ -35,7 +35,7 @@ const userloginController = require('./controllers/userlogin')
 const myaccountController = require('./controllers/myaccount')
 const logoutController = require('./controllers/logout')
 const seatController = require('./controllers/seatselection')
-const chcekoutController = require('./controllers/checkout')
+const chekoutController = require('./controllers/checkout')
 // const schduleController = require('./controllers/showallflights')
 const blogController = require('./controllers/blogController')
 
@@ -44,7 +44,14 @@ const redirectIfAutheticatedMiddleware = require('./views/middleWare/redirectAut
 const authMiddleware=require('./views/middleWare/authMiddleWare')
 const allFlightsController = require('./controllers/allFlights.js')
 const updateUserPageController = require('./controllers/updateUserPage.js')
+const updateUserBookingPageController = require('./controllers/updateUserBookingPage.js')
+const updateUserBookingController = require('./controllers/updateUserBooking.js')
+const updateAdminBookigPageController = require('./controllers/updateAdminBookingPage.js')
+const updateAdminBooking = require('./controllers/updateAdminBooking.js')
 const bookController= require('./controllers/book.js')
+const allUsersController = require('./controllers/allUsers.js')
+
+const allBookingsController = require('./controllers/allBookings.js')
 global.loggedIn = null;
 global.uType = "";
 app.use(flash());
@@ -65,7 +72,7 @@ app.get('/',dashboardController)
 app.get('/signup', signupController)
 app.post('/usersignup', redirectIfAutheticatedMiddleware, usersignupController)
 app.get('/adminFlights', authMiddleware, adminFlightsController)
-app.post('/addFlight', addFlightController)
+app.post('/addFlight', authMiddleware, addFlightController)
 app.post('/showFlights', showFlights)
 app.get('/service', serviceController)
 app.get('/meals', mealsController)
@@ -76,9 +83,9 @@ app.get('/login', loginController)
 app.get('/userlogin', redirectIfAutheticatedMiddleware, userloginController)
 app.get('/myaccount',authMiddleware, myaccountController)
 app.get('/logout', logoutController)
-app.get('/seatselection',seatController)
-app.get('/checkout', chcekoutController)
-app.post('/book',bookController)
+app.get('/seatselection', authMiddleware,seatController)
+app.get('/checkout',  authMiddleware,chekoutController)
+app.post('/book', authMiddleware,bookController)
 
 // app.get('/loginsignup', (req,res)=>{
 //     res.render('login_signup')
@@ -149,11 +156,19 @@ app.get('/allFlights', (req, res) => {
         });
 });
 
-app.post('/updateProfile', updateProfileController)
+app.post('/updateProfile', authMiddleware, updateProfileController)
+app.get('/updateUserBookingPage',authMiddleware, updateUserBookingPageController)
+app.post('/updateUserBooking',authMiddleware, updateUserBookingController)
+app.get('/updateAdminBookingPage',authMiddleware, updateAdminBookigPageController)
+app.post('/updateAdminBooking', authMiddleware, updateAdminBooking)
 app.get('/blog', blogController)
 app.get('/pet', petController)
 // app.get('/allFlights', allFlightsController);
-app.get('/updateUserPage', updateUserPageController)
+app.get('/updateUserPage', authMiddleware, updateUserPageController)
+app.get('/allUsers',authMiddleware, allUsersController)
+
+app.get('/allBookings',authMiddleware, allBookingsController)
+
 app.use((req, res) => res.render('notFound'));
 
 
