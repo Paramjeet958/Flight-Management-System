@@ -25,13 +25,13 @@
         overflow: hidden;
       }
       
-      .bg_img{
+      /* .bg_img{
         background-image: url('/assets/img/contactus.jpeg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;  
         height: 50vh;
-      }
+      } */
       .section-title {
         position: relative;
         font-size: 28px;

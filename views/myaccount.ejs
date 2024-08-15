@@ -4,6 +4,28 @@
     <%- include('layouts/header'); -%>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>My Account</title>
+    <STYLE>
+        .table-responsive {
+    display: flex;
+    justify-content: center;
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.table th, .table td {
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+tbody tr:hover {
+            font-weight: bold;
+            background-color: #bcbbbb; /* Light grey background on hover */
+        }
+
+    </STYLE>
 </head>
 <body>
     <%- include('layouts/navbar'); -%>
@@ -33,6 +55,7 @@
                 <br><br>
                 <h3>Your Bookings</h3>
                 <% if (bookings && bookings.length>0) { %> 
+                    <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead>
@@ -77,6 +100,9 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                </div>
+                </div>
                 <% } else { %>
                     <p>No bookings found.</p>
                 <% } %>

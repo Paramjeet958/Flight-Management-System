@@ -30,7 +30,16 @@
                                 <strong>Arrival Date:</strong> <%= new Date(flight.arrivalDate).toDateString() %><br>
                                 <strong>Duration:</strong> <%= flight.duration %> minutes
                             </p>
-                            <button><a href="/book/<%= flight._id %>" class="custom-btn">Book Now</a></button> <!-- Applied custom-btn class -->
+                            <button><a href="/seatselection?<%= new URLSearchParams({
+                                flightNumber: flight.flightNumber,
+                                flightName: flight.flightName,
+                                origin: flight.origin,
+                                destination: flight.destination,
+                                duration: flight.duration,
+                                departureDate: flight.departureDate.toISOString(),
+                                arrivalDate: flight.arrivalDate.toISOString(),
+                                status: flight.status
+                            }).toString() %>">See Details</a></button> <!-- Applied custom-btn class -->
                         </div>
                     </div>
                 </div>

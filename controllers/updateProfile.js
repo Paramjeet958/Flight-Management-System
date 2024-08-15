@@ -1,37 +1,37 @@
 const mongoose = require('mongoose');
-const ObjectId = mongoose.Types.ObjectId;
-const Bookings = require('../models/Bookings');
+const Users = require('../models/Users');
 const { sendMail } = require('../services/emailService');
 
 module.exports = async (req, res) => {
     
         try {
-            const booking = await Bookings.findOne({ _id: new ObjectId(req.body.booking_id) });
-            if (!booking) {
-                console.log("Booking not found");
-                return res.redirect('/myaccount');
+            const user = await Users.findOne({ userName: req.session.userName });
+            if (!user) {
+                console.log("User not found");
+                return res.redirect('/login');
             }
 
-            await Bookings.updateOne({
-                _id: new ObjectId(req.body.booking_id)
+            await Users.updateOne({
+                userName: req.session.userName
             }, {
                 $set: {
-                    "flightNumber": req.body.flightNumber,
-                    "flightName": req.body.flightName,
-                    "seatNumber": req.body.seatNumber,
-                    "departureDate": req.body.departureDate,
-                    "arrivalDate": req.body.arrivalDate,
-                    "price": req.body.price,
-                    "fullName": req.body.fullName,
+                    "fname": req.body.fname,
+                    "lname": req.body.lname,
+                    "email": req.body.email,
                     "phone": req.body.phone,
-                    "address": req.body.address
+                    "street": req.body.street,
+                    "city": req.body.city,
+                    "state": req.body.state,
+                    "zip": req.body.country,
+                    "dateofBirth": req.body.dateofBirth,
+                    "passportNumber": req.body.passportNumber
                 }
             });
 
-            console.log("Booking updated successfully");
+            console.log("Info updated successfully", user);
             res.redirect('/myaccount');
         } catch (err) {
-            console.error("Error updating booking:", err);
+            console.error("Error updating info:", err);
             res.redirect('/myaccount');
         }
   
